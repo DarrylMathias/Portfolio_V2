@@ -61,7 +61,7 @@ const Hero = () => {
           <NavbarDemo />
 
           {/* Actual hero section */}
-          <div className="flex justify-center relative my-12 z-20 sm:py-20">
+          <div className="flex justify-center relative my-12 z-20 sm:py-20 pt-12">
             <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
               <p className="uppercase tracking-widest text-xs text-center text-violet-500 dark:text-blue-100 max-w-80">
                 Dynamic Web Magic with Next.js

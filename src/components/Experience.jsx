@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/moving-border";
 const Experience = () => {
   return (
     <div className="pt-10 pb-30 w-full px-10 sm:px-30 lg:px-50">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mt-7 mb-2">
+      <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-6xl text-center mt-7 mb-2">
         My{" "}
         <span className="text-purple-300">work experience</span>
       </h1>

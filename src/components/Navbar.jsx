@@ -99,9 +99,6 @@ export function NavbarDemo() {
               >
                 Resume
               </NavbarButton>
-              <NavbarButton variant="secondary">
-                <ModeToggle></ModeToggle>
-              </NavbarButton>
             </div>
           </MobileNavMenu>
         </MobileNav>

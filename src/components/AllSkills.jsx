@@ -12,16 +12,16 @@ const AllSkills = () => {
   return (
     <section
       id="allskills"
-      className="py-20 flex flex-col justify-center items-center"
+      className="py-20 flex flex-col justify-center items-center px-3"
     >
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mt-3 mb-3">
+      <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-6xl text-center mt-7 mb-2">
         All of my <span className="text-purple-300">Skills</span> at one place
       </h1>
 
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-3 px-6">
         {skills.map((item, idx) => (
           <CardContainer key={idx} className="inter-var">
-            <CardBody className="w-full h-60 relative rounded-2xl border border-b-0 border-slate-800 p-5 md:p-8">
+            <CardBody className="w-full sm:h-60 h-40 relative rounded-2xl border border-b-0 border-slate-800 p-5 md:p-8">
               <div
                 style={{
                   background:

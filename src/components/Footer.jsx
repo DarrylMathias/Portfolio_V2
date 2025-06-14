@@ -17,7 +17,7 @@ const Footer = () => {
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-7 mb-3 lg:max-w-[60vw] font-semibold tracking-tight leading-tight">
+        <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-6xl text-center mt-7 mb-2 lg:max-w-[60vw] tracking-tight leading-tight">
           Ready to take <span className="text-purple-300">your</span> digital presence to the next level?
         </h1>
         <p className="text-neutral-300 md:mt-4 mb-10 max-w-xl">
