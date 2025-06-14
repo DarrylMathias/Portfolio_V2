@@ -20,10 +20,10 @@ export default function FeedbackForm() {
 
   useEffect(() => {
     const { name, email, message } = data;
-    if (name.length > 0 && email.length > 0 && message.length > 10) {
-      setBlocked(false);
-    } else {
-      setBlocked(true);
+    if(name.length > 0 && email.length > 0 && message.length > 0){
+      setBlocked(false)
+    }else{
+      setBlocked(true)
     }
   }, [data]);
 
@@ -142,6 +142,7 @@ export default function FeedbackForm() {
                 onChange={handleChange}
                 className="min-h-[120px] bg-gray-50 dark:bg-gray-800 dark:text-white border dark:border-gray-600"
                 required
+                minLength = {10}
               />
             </div>
 

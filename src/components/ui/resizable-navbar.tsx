@@ -241,9 +241,8 @@ export const NavbarLogo = () => {
         alt="logo"
         width={30}
         height={30}
-        className="rounded-full"
       />
-      <span className="font-medium text-black dark:text-white">Darryl</span>
+      <span className="font-normal text-black dark:text-white text-lg">Darryl Mathias</span>
     </a>
   );
 };
