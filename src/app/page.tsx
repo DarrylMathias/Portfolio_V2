@@ -3,6 +3,8 @@ import Image from "next/image";
 import Grid from "@/components/Grid";
 import RecentProjects from "@/components/RecentProjects";
 import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
         <Grid />
         <RecentProjects />
         <Skills />
+        <Experience />
+        <Footer />
       </div>
     </main>
   );

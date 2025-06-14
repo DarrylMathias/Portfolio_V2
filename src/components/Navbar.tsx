@@ -46,7 +46,7 @@ export function NavbarDemo() {
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">
               <a
-                href="./Darryl_Mathias_Resume_Latest.pdf"
+                href="/Darryl_Mathias_Resume_Latest.pdf"
                 download="Darryl_Mathias"
               >
                 Resume

@@ -119,159 +119,194 @@ export const skills = [
   {
     "id": 1,
     "name": "Next.js",
-    "image" : "/next.svg",
+    "image": "/next.svg",
     "description": "A powerful React framework with SSR, SSG, API routes, and great developer experience.",
     "link": "https://nextjs.org/"
   },
   {
     "id": 2,
     "name": "React.js",
-    "image" : "/re.svg",
+    "image": "/re.svg",
     "description": "A JavaScript library for building dynamic user interfaces with component-based architecture.",
     "link": "https://react.dev/"
   },
   {
     "id": 3,
     "name": "TypeScript",
-    "image" : "/ts.svg",
+    "image": "/ts.svg",
     "description": "A statically typed superset of JavaScript that improves reliability and developer productivity.",
     "link": "https://www.typescriptlang.org/"
   },
   {
     "id": 4,
     "name": "JavaScript",
-    "image" : "/js.svg",
+    "image": "/js.svg",
     "description": "The core language of the web used for interactivity and full-stack development.",
     "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
     "id": 5,
+    "name": "Tailwind CSS",
+    "image": "/tail.svg",
+    "description": "A utility-first CSS framework for rapidly building custom designs with ease.",
+    "link": "https://tailwindcss.com/"
+  },
+  {
+    "id": 6,
     "name": "HTML",
-    "image" : "/html.svg",
+    "image": "/html.svg",
     "description": "The foundation of web content, used to structure elements on the page.",
     "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "CSS",
-    "image" : "/css.svg",
+    "image": "/css.svg",
     "description": "Used to style and visually design web applications responsively and beautifully.",
     "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "Shadcn UI",
-    "image" : "/shadcn-ui.svg",
+    "image": "/shadcn-ui.svg",
     "description": "A modern component library built with Radix UI and Tailwind CSS, focused on accessibility.",
     "link": "https://ui.shadcn.com/"
   },
   {
-    "id": 8,
+    "id": 9,
+    "name": "Bootstrap",
+    "image": "/bootstrap.svg",
+    "description": "A popular CSS framework with ready-made responsive UI components and grid system.",
+    "link": "https://getbootstrap.com/"
+  },
+  {
+    "id": 10,
+    "name": "Chakra UI",
+    "image": "/chakra.svg",
+    "description": "A modular, accessible React component library that offers flexibility and style props.",
+    "link": "https://chakra-ui.com/"
+  },
+  {
+    "id": 11,
     "name": "GSAP",
-    "image" : "/gsap.svg",
+    "image": "/gsap.svg",
     "description": "A performant animation library for crafting high-quality, complex animations on the web.",
     "link": "https://gsap.com/"
   },
   {
-    "id": 9,
+    "id": 12,
     "name": "Node.js",
-    "image" : "/nodejs.svg",
+    "image": "/nodejs.svg",
     "description": "A runtime that allows building scalable backend services with JavaScript.",
     "link": "https://nodejs.org/en/"
   },
   {
-    "id": 10,
+    "id": 13,
     "name": "Express",
-    "image" : "/express.svg",
+    "image": "/express.svg",
     "description": "A fast, minimalist framework for Node.js used for building APIs and backend logic.",
     "link": "https://expressjs.com/"
   },
   {
-    "id": 11,
+    "id": 14,
     "name": "MongoDB",
-    "image" : "/mongodb.svg",
+    "image": "/mongodb.svg",
     "description": "A document-based NoSQL database ideal for flexible, scalable web apps.",
     "link": "https://www.mongodb.com/"
   },
   {
-    "id": 12,
+    "id": 15,
     "name": "Firebase",
-    "image" : "/firebase.svg",
+    "image": "/firebase.svg",
     "description": "A BaaS platform offering authentication, hosting, and NoSQL database services.",
     "link": "https://firebase.google.com/"
   },
   {
-    "id": 13,
+    "id": 16,
     "name": "Git",
-    "image" : "/git.svg",
+    "image": "/git.svg",
     "description": "A version control system to manage code changes and collaborate efficiently.",
     "link": "https://git-scm.com/"
   },
   {
-    "id": 14,
+    "id": 17,
     "name": "Python",
-    "image" : "/python.svg",
+    "image": "/python.svg",
     "description": "A beginner-friendly, versatile language used in automation, scripting, and backend development.",
     "link": "https://docs.python.org/3/"
   },
   {
-    "id": 16,
+    "id": 18,
     "name": "C",
-    "image" : "/c.svg",
+    "image": "/c.svg",
     "description": "A foundational systems language that powers operating systems and embedded software.",
     "link": "https://en.cppreference.com/w/c"
   },
   {
-    "id": 17,
+    "id": 19,
     "name": "Java",
-    "image" : "/java.svg",
+    "image": "/java.svg",
     "description": "An object-oriented language heavily used in Android apps and enterprise systems.",
     "link": "https://docs.oracle.com/en/java/"
   }
-]
+];
+
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Fullstack Web Developer, TSEC Devs Club",
+    desc: "Redesigned the official landing page with Next.js, integrating smooth Lottie animations to enhance interactivity and visual appeal.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
-  {
-    id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp2.svg",
-  },
-  {
-    id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
-  },
+  // {
+  //   id: 2,
+  //   title: "Mobile App Dev - JSM Tech",
+  //   desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+  //   className: "md:col-span-2", // change to md:col-span-2
+  //   thumbnail: "/exp2.svg",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Freelance App Dev Project",
+  //   desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+  //   className: "md:col-span-2", // change to md:col-span-2
+  //   thumbnail: "/exp3.svg",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Lead Frontend Developer",
+  //   desc: "Developed and maintained user-facing features using modern frontend technologies.",
+  //   className: "md:col-span-2",
+  //   thumbnail: "/exp4.svg",
+  // },
 ];
 
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    img: "/linkedin.svg",
+    link : 'https://www.linkedin.com/in/darryl-mathias-020241317/'
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/git.svg",
+    link : 'https://github.com/DarrylMathias'
   },
   {
     id: 3,
-    img: "/link.svg",
+    img: "/gmail.svg",
+    link : 'darrylnevmat@gmail.com'
   },
+  {
+    id: 4,
+    img : '/quora.svg',
+    link : 'https://www.quora.com/profile/Darryl-Mathias-5'
+  },
+  {
+    id: 5,
+    img : '/yt.svg',
+    link : 'https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng'
+  }
 ];
