@@ -1,3 +1,5 @@
+"use client"
+
 import Hero from "@/components/Hero";
 import Image from "next/image";
 import Grid from "@/components/Grid";
@@ -5,7 +7,8 @@ import RecentProjects from "@/components/RecentProjects";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
-import Map from "@/components/Map";
+import dynamic from "next/dynamic";
+const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
 export default function Home() {
   return (
