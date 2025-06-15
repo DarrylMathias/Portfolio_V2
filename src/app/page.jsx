@@ -5,6 +5,7 @@ import RecentProjects from "@/components/RecentProjects";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
+import Map from "@/components/Map";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <Grid />
         <RecentProjects />
+        {/* <Map /> */}
         <Skills />
         <Experience />
         <Footer />
