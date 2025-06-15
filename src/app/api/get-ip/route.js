@@ -12,8 +12,8 @@ export async function GET(request, response) {
     await axios.get(`https://ipapi.co/${ip}/json/`)
         .then(async (res) => {
             const findDuplicateIp = await locationModel.findOne({ ip: res.data.ip })
-            const findDuplicateLat = await locationModel.findOne({ ip: res.data.lat })
-            const findDuplicateLon = await locationModel.findOne({ ip: res.data.lon })
+            const findDuplicateLat = await locationModel.findOne({ lat: res.data.latitude })
+            const findDuplicateLon = await locationModel.findOne({ lon: res.data.longitude })
             if (!findDuplicateIp && !findDuplicateLat && !findDuplicateLon) {
                 await locationModel.create({
                     ip: res.data.ip,
