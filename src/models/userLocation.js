@@ -1,10 +1,11 @@
 import mongoose from 'mongoose'
-import { number } from 'motion'
 
 const locationSchema = mongoose.Schema({
-    ip: number,
-    lat: number,
-    lon: number,
+    ip: { type: String, required: true },
+    lat: { type: Number },
+    lon: { type: Number },
+    city: { type: String },
+    country: { type: String },
 })
 
 // If the model already exists use it, or create one

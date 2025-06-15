@@ -17,6 +17,7 @@ import L from "leaflet";
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import shadowUrl from "leaflet/dist/images/marker-shadow.png";
+import axios from "axios";
 
 const DefaultIcon = L.icon({
   iconUrl,
@@ -31,25 +32,41 @@ const DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const allCoords = [
-  [28.644800, 77.216721],
-  [19.076090, 72.877426],
-];
+let allCoords = [];
+await axios
+  .get("/api/fetch-coords")
+  .then((res) => {
+    const allUserCoords = res.data.allUserCoords;
+    allCoords = allUserCoords
+      .filter((userCoords) => userCoords.lat != null && userCoords.lon != null)
+      .map((userCoords) => [userCoords?.lat, userCoords?.lon]);
+    console.log(allCoords);
+  })
+  .catch((error) => {
+    console.log(`Error in fetching, ${error}`);
+  });
 
 const Map = () => {
   return (
     <section
       id="map"
-      className="py-20 flex flex-col justify-center items-center px-5"
+      className="py-5 flex flex-col justify-center items-center px-5"
     >
       <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-6xl text-center mt-7 mb-5">
         Audience around <span className="text-purple-300">The World</span>
       </h1>
+      <p className="text-neutral-300 md:mt-4 mb-10 max-w-xl sm:max-w-3xl text-center">
+        📡 Every visitor to this page, tracked down to the last coordinate using{" "}
+        <a href="https://react-leaflet.js.org/" className="underline text-blue-400">React Leaflet</a> and{" "}
+        <a href="https://ipapi.co/" className="underline text-blue-400">ipapi.co</a>.
+      </p>
+
       <MapContainer
         center={[20, 73]}
-        zoom={6}
+        zoom={5}
         scrollWheelZoom={false}
-        style={{ height: "500px", width: "100%" }}
+        style={{ height: "500px", width: "90%" }}
+        className="rounded-lg"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

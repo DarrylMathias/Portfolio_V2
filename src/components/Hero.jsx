@@ -1,30 +1,42 @@
-import React from "react";
+"use client"
+
+import React, { useEffect } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { NavbarDemo } from "@/components/Navbar";
 import { FlipWords } from "./ui/flip-words";
 import { CiLocationArrow1 } from "react-icons/ci";
+import axios from 'axios'
 
 const Hero = () => {
   const words = [
-  "developer",
-  "problem solver",
-  "tech enthusiast",
-  "fullstack wizard",
-  "visionary builder",
-  "fast mover",
-  "curious mind",
-  "minimalist coder",
-  "product thinker",
-  "design-friendly dev",
-  "debugging ninja",
-  "code artist",
-  "API whisperer",
-  "idea chaser",
-  "shipper of things",
-];
+    "developer",
+    "problem solver",
+    "tech enthusiast",
+    "fullstack wizard",
+    "visionary builder",
+    "fast mover",
+    "curious mind",
+    "minimalist coder",
+    "product thinker",
+    "design-friendly dev",
+    "debugging ninja",
+    "code artist",
+    "API whisperer",
+    "idea chaser",
+    "shipper of things",
+  ];
 
+  useEffect(() => {
+    axios.get('/api/get-ip')
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(`Error in fetching : ${err}`);
+    })
+  }, []);
 
   return (
     <>
@@ -71,8 +83,7 @@ const Hero = () => {
               <p className="text-center md:tracking-wider my-6 text-lg md:text-xl lg:text-2xl">
                 Hi! I&apos;m{" "}
                 <span className="text-violet-400">Darryl Mathias</span>, a
-                <FlipWords words={words} />
-                @ Sophomore, TSEC CE.
+                <FlipWords words={words} />@ Sophomore, TSEC CE.
               </p>
 
               {/* Button */}
