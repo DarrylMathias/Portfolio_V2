@@ -22,7 +22,7 @@ export async function GET(request, response) {
                     city: res.data.city,
                     country: res.data.country_name
                 })
-                console.log(`Stored IP: ${ip}, Location: ${res.data.city}, ${res.data.country_name}`);
+                console.log(`Stored IP: ${ip}, Location: ${res.data.city}, ${res.data.country_name} : ${res.data?.org}`);
             } else {
                 console.log('IP Address already exists');
             }
