@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect } from "react";
 import { Spotlight } from "./ui/Spotlight";
@@ -7,7 +7,7 @@ import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { NavbarDemo } from "@/components/Navbar";
 import { FlipWords } from "./ui/flip-words";
 import { CiLocationArrow1 } from "react-icons/ci";
-import axios from 'axios'
+import axios from "axios";
 
 const Hero = () => {
   const words = [
@@ -29,13 +29,17 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    axios.get('/api/get-ip')
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(`Error in fetching : ${err}`);
-    })
+    const fetchData = async () => {
+      await axios
+        .get("/api/get-ip")
+        .then((res) => {
+          // console.log(res);
+        })
+        .catch((err) => {
+          console.log(`Error in fetching : ${err}`);
+        });
+    };
+    fetchData()
   }, []);
 
   return (

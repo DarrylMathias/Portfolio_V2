@@ -2,6 +2,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import FeedbackForm from "./FeedbackForm";
+import Views from '@/components/Views'
 
 const Footer = () => {
   return (
@@ -29,6 +30,8 @@ const Footer = () => {
           <FeedbackForm />
         </div>
       </div>
+
+      <Views />
 
       {/* Bottom Section */}
       <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-10">

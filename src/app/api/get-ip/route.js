@@ -2,6 +2,7 @@ import connect from "@/config/mongoose";
 import { NextResponse } from "next/server";
 import axios from "axios";
 import locationModel from "@/models/userLocation";
+import viewCountModel from '@/models/viewCount'
 
 export async function GET(request, response) {
 
@@ -14,6 +15,12 @@ export async function GET(request, response) {
             const findDuplicateIp = await locationModel.findOne({ ip: res.data.ip })
             const findDuplicateLat = await locationModel.findOne({ lat: res.data.latitude })
             const findDuplicateLon = await locationModel.findOne({ lon: res.data.longitude })
+            const updatedViews = await viewCountModel.findOneAndUpdate(
+                {},
+                { $inc: { views: 1 } },
+                { new: true, upsert: true }
+            );
+            
             if (!findDuplicateIp && !findDuplicateLat && !findDuplicateLon) {
                 await locationModel.create({
                     ip: res.data.ip,

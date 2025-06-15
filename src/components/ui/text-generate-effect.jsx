@@ -33,11 +33,11 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className={` ${
-                idx > 3
-                  ? "dark:text-violet-300 text-violet-500"
-                  : "dark:text-white text-black opacity-0"
-              } `}
+              // className={` ${
+              //   idx > 3
+              //     ? "dark:text-violet-300 text-violet-500"
+              //     : "dark:text-white text-black opacity-0"
+              // } `}
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
@@ -49,6 +49,7 @@ export const TextGenerateEffect = ({
               ) : (
                 word + " "
               )}
+              {/* {word}{" "} */}
             </motion.span>
           );
         })}
