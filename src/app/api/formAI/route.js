@@ -5,11 +5,10 @@ import feedbackModel from "@/models/feedback";
 import aiMailer from "@/utils/aiResponse";
 import aiMessageInfo from "@/utils/aiMessageInfo";
 
-connect(); // => Just connect
-
 // We create functions like these for treating each case of a route (like POST signup, GET signup)
 export async function POST(request) {
   try {
+    await connect(); // => Just connect
     const { name, email, message } = await request.json();
     const aiReply = await aiMailer(message, email);
     await feedbackModel.create({ name, email, message, aiReply });

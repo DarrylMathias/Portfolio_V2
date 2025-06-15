@@ -4,11 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 import feedbackModel from "@/models/feedback";
 import sendInfoMail from "@/utils/sendInfoMail";
 
-connect(); // => Just connect
+
 
 // We create functions like these for treating each case of a route (like POST signup, GET signup)
 export async function POST(request) {
   try {
+    await connect(); // => Just connect
     const { name, email, message } = await request.json();
     await feedbackModel.create({
       name,
