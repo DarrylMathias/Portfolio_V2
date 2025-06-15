@@ -27,10 +27,22 @@ const Views = () => {
       className="pb-20 flex flex-col justify-center items-center px-5"
     >
       <div className="flex justify-center items-center w-full">
-        <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-5xl text-center mt-7 mb-2">
-          <span className="text-purple-300">Total views so far, </span>
-          <CountUp key={views} start={0} end={views} startOnMount={true} enableScrollSpy={true} useIndianSeparators = {true}/>
-        </h1>
+        <p className="text-lg sm:text-xl text-neutral-400 mb-2">
+          Live Eyes on This page 👀
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center">
+            <span className="text-purple-400">
+              <CountUp
+                key={views}
+                start={0}
+                end={views}
+                startOnMount={true}
+                enableScrollSpy={true}
+                useIndianSeparators={true}
+                duration={2}
+              />
+            </span>
+          </h1>
+        </p>
       </div>
     </section>
   );
