@@ -27,9 +27,9 @@ const Views = () => {
       className="pb-20 flex flex-col justify-center items-center px-5"
     >
       <div className="flex justify-center items-center w-full">
-        <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-4xl text-center mt-7 mb-2">
+        <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-5xl text-center mt-7 mb-2">
           <span className="text-purple-300">Total views so far, </span>
-          <CountUp key={views} start={0} end={views} startOnMount={true} enableScrollSpy={true} />
+          <CountUp key={views} start={0} end={views} startOnMount={true} enableScrollSpy={true} useIndianSeparators = {true}/>
         </h1>
       </div>
     </section>
