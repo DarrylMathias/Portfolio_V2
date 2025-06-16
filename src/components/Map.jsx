@@ -12,10 +12,10 @@ import {
 import { useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
-const MarkerClusterGroup = dynamic(
-  () => import("react-leaflet-markercluster").then((mod) => mod.default),
-  { ssr: false }
-);
+// const MarkerClusterGroup = dynamic(
+//   () => import("react-leaflet-markercluster").then((mod) => mod.default),
+//   { ssr: false }
+// );
 
 
 // Marker img fetch
@@ -89,7 +89,7 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MarkerClusterGroup chunkedLoading showCoverageOnHover={false}>
+        {/* <MarkerClusterGroup chunkedLoading showCoverageOnHover={false}> */}
         {allCoordsObj.map((coord, i) => (
           <Marker key={i} position={[coord.lat, coord.lon]}>
             {coord.city && coord.country && (
@@ -97,7 +97,7 @@ const Map = () => {
             )}
           </Marker>
         ))}
-        </MarkerClusterGroup>
+        {/* </MarkerClusterGroup> */}
       </MapContainer>
     </section>
   );
