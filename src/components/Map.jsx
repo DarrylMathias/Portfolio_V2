@@ -12,10 +12,10 @@ import {
 import { useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
-const MarkerClusterGroup = dynamic(
-  () => import("react-leaflet-markercluster").then((mod) => mod.default),
-  { ssr: false }
-);
+// const MarkerClusterGroup = dynamic(
+//   () => import("react-leaflet-markercluster").then((mod) => mod.default),
+//   { ssr: false }
+// );
 
 
 // Marker img fetch
