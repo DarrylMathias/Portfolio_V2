@@ -2,7 +2,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import FeedbackForm from "./FeedbackForm";
-import Views from '@/components/Views'
+import Views from "@/components/Views";
 
 const Footer = () => {
   return (
@@ -19,10 +19,12 @@ const Footer = () => {
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
         <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-6xl text-center mt-7 mb-2 lg:max-w-[60vw] tracking-tight leading-tight">
-          Ready to take <span className="text-purple-300">your</span> digital presence to the next level?
+          Ready to take <span className="text-purple-300">your</span> digital
+          presence to the next level?
         </h1>
         <p className="text-neutral-300 md:mt-4 mb-10 max-w-xl">
-          Reach out to me today and let&apos;s discuss how I can help you achieve your goals.
+          Reach out to me today and let&apos;s discuss how I can help you
+          achieve your goals.
         </p>
 
         {/* Feedback Form */}
@@ -87,11 +89,20 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="w-10 h-10 flex justify-center items-center backdrop-blur-md bg-black/40 rounded-lg border border-black/20 transition-transform hover:scale-105"
             >
-              <img src={info.img} alt={`${info.id}-icon`} width={24} height={24} />
+              <img
+                src={info.img}
+                alt={`${info.id}-icon`}
+                width={24}
+                height={24}
+              />
             </a>
           ))}
         </div>
       </div>
+      <p className="text-sm text-muted-foreground px-6 md:px-10 py-5">
+        We collect your IP address to determine approximate location for
+        analytics. This data is processed securely and never shared beyond essential services.
+      </p>
     </footer>
   );
 };
