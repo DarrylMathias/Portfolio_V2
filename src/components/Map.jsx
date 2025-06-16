@@ -30,15 +30,15 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const Map = () => {
-  const [ allCoords, setAllCoords ] = useState([]);
-  const [allCoordsObj, setAllCoordsObj] = useState([])
+  const [allCoords, setAllCoords] = useState([]);
+  const [allCoordsObj, setAllCoordsObj] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       await axios
         .get("/api/fetch-coords")
         .then((res) => {
-          setAllCoordsObj(res.data.allUserCoords)
+          setAllCoordsObj(res.data.allUserCoords);
           const allUserCoords = res.data.allUserCoords;
           setAllCoords(
             allUserCoords
@@ -81,7 +81,7 @@ const Map = () => {
 
       <MapContainer
         center={[20, 73]}
-        zoom={4}
+        zoom={7}
         scrollWheelZoom={false}
         style={{ height: "500px", width: "90%" }}
         className="rounded-lg"
@@ -92,10 +92,11 @@ const Map = () => {
         />
         {allCoords.map((position, i) => (
           <Marker key={i} position={position}>
-            <Popup>
-              {/* A pretty CSS3 popup. <br /> Easily customizable. */}
-              {`${allCoordsObj[i].city}, ${allCoordsObj[i].country}`}
-            </Popup>
+            {allCoordsObj.city && allCoordsObj.country && (
+              <Popup>
+                {`${allCoordsObj[i].city}, ${allCoordsObj[i].country}`}
+              </Popup>
+            )}
           </Marker>
         ))}
       </MapContainer>
