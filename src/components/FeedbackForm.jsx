@@ -18,14 +18,14 @@ export default function FeedbackForm() {
 
   const [isBlocked, setBlocked] = useState(false);
 
-  useEffect(() => {
-    const { name, email, message } = data;
-    if (name.length > 0 && email.length > 0 && message.length > 0) {
-      setBlocked(false);
-    } else {
-      setBlocked(true);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   const { name, email, message } = data;
+  //   // if (name.length > 0 && email.length > 0 && message.length > 0) {
+  //   //   setBlocked(false);
+  //   // } else {
+  //   //   setBlocked(true);
+  //   // }
+  // }, [data]);
 
   function handleChange(e) {
     setData({ ...data, [e.target.name]: e.target.value });
