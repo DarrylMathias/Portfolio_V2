@@ -20,11 +20,11 @@ const DefaultIcon = L.icon({
   iconUrl: "/marker-icon.png",
   iconRetinaUrl: "/marker-icon-2x.png",
   shadowUrl: "/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  tooltipAnchor: [16, -28],
-  shadowSize: [41, 41],
+  iconSize: [15, 25],
+  iconAnchor: [7, 25],
+  popupAnchor: [1, -24],
+  tooltipAnchor: [10, -20],
+  shadowSize: [25, 25],
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
@@ -74,7 +74,7 @@ const Map = () => {
 
       <MapContainer
         center={[20, 73]}
-        zoom={7}
+        zoom={4}
         scrollWheelZoom={false}
         style={{ height: "500px", width: "90%" }}
         className="rounded-lg"

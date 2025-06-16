@@ -15,7 +15,7 @@ const AllSkills = () => {
       className="py-20 flex flex-col justify-center items-center px-3"
     >
       <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-6xl text-center mt-7 mb-2">
-        All of my <span className="text-purple-300">Skills</span> at one place
+        All of my <span className="text-purple-300">Skills</span> in one place
       </h1>
 
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-3 px-6">

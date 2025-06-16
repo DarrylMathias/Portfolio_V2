@@ -11,28 +11,53 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { ModeToggle } from "./ModeToggle";
-
 import { useState } from "react";
+import { useEffect } from "react";
 
-export function NavbarDemo() {
-  const navItems = [
-    {
-      name: "About",
-      link: "#about",
-    },
-    {
-      name: "Projects",
-      link: "#projects",
-    },
-    {
-      name: "Skills",
-      link: "#skills",
-    },
-    {
-      name: "Contact",
-      link: "#contact",
-    },
-  ];
+export function NavbarDemo({ isRoute }) {
+  const [navItems, setNavItems] = useState([]);
+
+  useEffect(() => {
+    setNavItems(
+      isRoute
+        ? [
+            {
+              name: "About",
+              link: "https://darrylmathias.vercel.app/#about",
+            },
+            {
+              name: "Projects",
+              link: "https://darrylmathias.vercel.app/#projects",
+            },
+            {
+              name: "Skills",
+              link: "https://darrylmathias.vercel.app/#skills",
+            },
+            {
+              name: "Contact",
+              link: "https://darrylmathias.vercel.app/#contact",
+            },
+          ]
+        : [
+            {
+              name: "About",
+              link: "#about",
+            },
+            {
+              name: "Projects",
+              link: "#projects",
+            },
+            {
+              name: "Skills",
+              link: "#skills",
+            },
+            {
+              name: "Contact",
+              link: "#contact",
+            },
+          ]
+    );
+  }, [isRoute]);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
