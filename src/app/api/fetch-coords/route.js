@@ -6,7 +6,7 @@ import connect from "@/config/mongoose";
 export async function GET(req, res) {
     try {
         await connect()
-        const allUserCoords = await locationModel.find()
+        const allUserCoords = await locationModel.find().select('-ip')
         return NextResponse.json({ allUserCoords }, { status: 200 })
     } catch (error) {
         console.log(`Error : ${error}`);
