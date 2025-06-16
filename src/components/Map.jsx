@@ -30,7 +30,6 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const Map = () => {
-  const [allCoords, setAllCoords] = useState([]);
   const [allCoordsObj, setAllCoordsObj] = useState([]);
 
   useEffect(() => {
@@ -38,16 +37,10 @@ const Map = () => {
       await axios
         .get("/api/fetch-coords")
         .then((res) => {
-          setAllCoordsObj(res.data.allUserCoords);
-          const allUserCoords = res.data.allUserCoords;
-          setAllCoords(
-            allUserCoords
-              .filter(
-                (userCoords) => userCoords.lat != null && userCoords.lon != null
-              )
-              .map((userCoords) => [userCoords?.lat, userCoords?.lon])
+          const filteredCoords = res.data.allUserCoords.filter(
+            (coord) => coord.lat != null && coord.lon != null
           );
-          console.log(allCoords);
+          setAllCoordsObj(filteredCoords);
         })
         .catch((error) => {
           console.log(`Error in fetching, ${error}`);
@@ -90,12 +83,10 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {allCoords.map((position, i) => (
-          <Marker key={i} position={position}>
-            {allCoordsObj.city && allCoordsObj.country && (
-              <Popup>
-                {`${allCoordsObj[i].city}, ${allCoordsObj[i].country}`}
-              </Popup>
+        {allCoordsObj.map((coord, i) => (
+          <Marker key={i} position={[coord.lat, coord.lon]}>
+            {coord.city && coord.country && (
+              <Popup>{`${coord.city}, ${coord.country}`}</Popup>
             )}
           </Marker>
         ))}
