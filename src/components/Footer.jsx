@@ -36,7 +36,7 @@ const Footer = () => {
       <Views />
 
       {/* Bottom Section */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-10">
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-10" id = 'socials'>
         {/* License and Credits */}
         <p className="text-sm text-muted-foreground text-center md:text-left flex flex-wrap items-center gap-1 max-w-2xl">
           <a

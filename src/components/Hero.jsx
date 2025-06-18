@@ -3,11 +3,11 @@
 import React, { useEffect } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { cn } from "@/lib/utils";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { NavbarDemo } from "@/components/Navbar";
 import { FlipWords } from "./ui/flip-words";
 import { CiLocationArrow1 } from "react-icons/ci";
 import axios from "axios";
+import { TypewriterEffect } from "./ui/typewriter-effect";
 
 const Hero = () => {
   const words = [
@@ -39,9 +39,8 @@ const Hero = () => {
           console.log(`Error in fetching : ${err}`);
         });
     };
-    fetchData()
+    fetchData();
   }, []);
-
   return (
     <>
       {/* Spotlight effect */}
@@ -74,7 +73,7 @@ const Hero = () => {
 
           {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" /> */}
 
-          <NavbarDemo isRoute = {false}/>
+          <NavbarDemo isRoute={false} />
 
           {/* Actual hero section */}
           <div className="flex justify-center relative my-12 z-20 sm:py-20 pt-12">
@@ -82,7 +81,7 @@ const Hero = () => {
               <p className="uppercase tracking-widest text-xs text-center text-violet-500 dark:text-blue-100 max-w-80">
                 Dynamic Web Magic with Next.js
               </p>
-              <TextGenerateEffect words="Transforming Vision into Elegant Digital Interfaces" />
+              <TypewriterEffect words="Transforming Vision into Elegant Digital Interfaces" className="dark:text-white text-black text-4xl leading-snug tracking-wide text-center md:text-5xl lg:text-6xl"/>
 
               <p className="text-center md:tracking-wider my-6 text-lg md:text-xl lg:text-2xl">
                 Hi! I&apos;m{" "}

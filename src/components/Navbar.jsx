@@ -37,6 +37,10 @@ export function NavbarDemo({ isRoute }) {
               name: "Contact",
               link: "https://darrylmathias.vercel.app/#contact",
             },
+            {
+              name: "Socials",
+              link: "https://darrylmathias.vercel.app/#socials",
+            },
           ]
         : [
             {
@@ -54,6 +58,10 @@ export function NavbarDemo({ isRoute }) {
             {
               name: "Contact",
               link: "#contact",
+            },
+            {
+              name: "Socials",
+              link: "#socials",
             },
           ]
     );

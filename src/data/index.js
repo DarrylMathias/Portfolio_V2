@@ -297,7 +297,7 @@ export const socialMedia = [
   {
     id: 3,
     img: "/gmail.svg",
-    link : 'darrylnevmat@gmail.com'
+    link : 'mailto:darrylnevmat@gmail.com'
   },
   {
     id: 4,
