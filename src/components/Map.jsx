@@ -96,7 +96,7 @@ const Map = () => {
           <Marker key={i} position={[coord.lat, coord.lon]}>
             {coord.city && coord.country && (
               <Popup>
-                {["Floating Router", "Penguinville", "Null Island"].includes(coord.city) ? (
+                {["Floating Router", "Penguinville", "Null Island", "Point Nemo"].includes(coord.city) ? (
                   <div>
                     {coord.city}, {coord.country}
                     <br />
