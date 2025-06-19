@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Darryl Mathias | Full-Stack Developer & Software Engineer Portfolio",
+  title: "Darryl Mathias | Full-Stack Developer",
   description: "Explore the modern, minimalist portfolio of Darryl Mathias — a passionate full-stack developer and software engineer. Showcasing projects, skills, and experience in web development, React, and more.",
 };
 
@@ -32,6 +32,31 @@ export default function RootLayout({
   <meta name="keywords"
     content="darryl, darryl mathias, mathias, home, skills, projects, contacts, web development, development website, web designing, web designing websites, web designing web, Darryl portfolio, Portfolio website, html css projects" />
   <meta name="author" content="Darryl Mathias" />
+
+  {/* Linkedin */}
+  <meta name="twitter:title" content="Darryl Mathias | LinkedIn Profile" />
+  <meta name="twitter:description" content="Connect with Darryl Mathias — Full-Stack Developer and Software Engineer. See work experience, skills, and professional background." />
+  <meta name="twitter:url" content="https://www.linkedin.com/in/darryl-mathias-020241317/" />
+  <meta name="twitter:card" content="summary" />
+
+  {/* GitHub */}
+  <meta name="twitter:title" content="Darryl Mathias | GitHub" />
+  <meta name="twitter:description" content="Explore open-source projects, contributions, and code snippets by Darryl Mathias. MERN stack, TypeScript, and more." />
+  <meta name="twitter:url" content="https://github.com/DarrylMathias" />
+  <meta name="twitter:card" content="summary" />
+
+  {/* YouTube */}
+  <meta name="twitter:title" content="Darryl Mathias | YouTube Channel" />
+  <meta name="twitter:description" content="Watch development tutorials, project walkthroughs, and coding insights from Darryl Mathias — a full-stack web developer." />
+  <meta name="twitter:url" content="https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng" />
+  <meta name="twitter:card" content="summary" />
+
+  {/* Quora */}
+  <meta name="twitter:title" content="Darryl Mathias | Quora Profile" />
+  <meta name="twitter:description" content="Answers from Darryl Mathias on programming, web development, full-stack tools, and tech career advice." />
+  <meta name="twitter:url" content="https://www.quora.com/profile/Darryl-Mathias-5" />
+  <meta name="twitter:card" content="summary" />
+
   <link rel="canonical" href="https://darrylmathias.vercel.app" />
 </head>
       <body

@@ -76,8 +76,8 @@ const Map = () => {
   </a>{" "}
 </p>
 <MapContainer
-        center={[20, 0]}
-        zoom={2}
+        center={[0, 0]}
+        zoom={1}
         scrollWheelZoom={false}
         style={{ height: "500px", width: "90%" }}
         className="rounded-lg"
