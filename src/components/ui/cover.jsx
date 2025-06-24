@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useId, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState, useEffect, useId } from "react";
 import { cn } from "@/lib/utils";
 import { SparklesCore } from "@/components/ui/sparkles";
 

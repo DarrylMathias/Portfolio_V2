@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://darrylmathias.vercel.app
+
+# Sitemaps
+Sitemap: https://darrylmathias.vercel.app/sitemap.xml

@@ -1,7 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import * as React from "react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -13,10 +14,10 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef(null);
   const scrollerRef = React.useRef(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     addAnimation();
   }, []);
-  const [start, setStart] = useState(false);
+  const [start, setStart] = React.useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -78,7 +79,7 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <a href={`${item.link}`} target = '_blank'>
+          <a href={`${item.link}`} key = {item.id} target = '_blank'>
             <li
               //   change md:w-[450px] to md:w-[60vw] , px-8 py-6 to p-16, border-slate-700 to border-slate-800
               className="w-[90vw] max-w-full relative rounded-2xl border border-b-0
@@ -103,7 +104,7 @@ export const InfiniteMovingCards = ({
                 <div className="relative z-20 mt-6 flex flex-row items-center">
                   {/* add this div for the profile img */}
                   <div className="me-3">
-                    <img src={item.image} alt="logo" height = {30} width = {30} />
+                    <Image src={item.image} alt="logo" height = {30} width = {30} />
                   </div>
                   <span className="flex flex-col gap-1">
                     {/* change text color, font-normal to font-bold, text-xl */}

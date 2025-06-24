@@ -1,16 +1,19 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import { Geist, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// const geistMono = Geist_Mono({
+//   subsets: ["latin"],
+// });
+
+const lato = Lato({
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -28,20 +31,14 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Darryl Mathias | Portfolio",
-    description: "Full-stack developer. Explore projects, skills and more.",
-    site: "@DarrylMathias",
-  },
 };
+
+export const experimental_ppr = true;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning={true} className="h-full">
+      <body className={`${lato.className} antialiased h-full`}>
         <SpeedInsights />
         <Analytics />
         <ThemeProvider

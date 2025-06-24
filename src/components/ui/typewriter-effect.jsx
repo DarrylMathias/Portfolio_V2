@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, stagger, useAnimate, useInView } from "motion/react";
+import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 import { AuroraText } from "../magicui/aurora-text";
 
@@ -12,7 +12,6 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
       useAurora : i > 3
     };
   });
-  console.log(wordsArray);
 
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);

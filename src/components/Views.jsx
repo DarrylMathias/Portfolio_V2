@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import React from "react";
 import CountUp from "react-countup";
 import axios from "axios";
 

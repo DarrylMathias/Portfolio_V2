@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import MagicButton from "./MagicButton";
+import MagicButton from "./ui/MagicButton";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { skills } from "@/data";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Image from "next/image";
 
 const AllSkills = () => {
   return (
@@ -36,7 +37,7 @@ const AllSkills = () => {
                     />
                     <div className="relative z-20 mt-6 flex flex-row items-center">
                       <CardItem className="me-3">
-                        <img
+                        <Image
                           src={item.image}
                           alt="logo"
                           height={30}

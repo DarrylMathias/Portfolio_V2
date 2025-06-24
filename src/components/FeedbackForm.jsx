@@ -5,9 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ShimmerButton } from "./magicui/shimmer-button";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { fetchForm } from "@/app/actions/form";
+import { fetchFormAI } from "@/app/actions/formAI";
 
 export default function FeedbackForm() {
   const [data, setData] = useState({
@@ -18,15 +19,6 @@ export default function FeedbackForm() {
 
   const [isBlocked, setBlocked] = useState(false);
 
-  // useEffect(() => {
-  //   const { name, email, message } = data;
-  //   // if (name.length > 0 && email.length > 0 && message.length > 0) {
-  //   //   setBlocked(false);
-  //   // } else {
-  //   //   setBlocked(true);
-  //   // }
-  // }, [data]);
-
   function handleChange(e) {
     setData({ ...data, [e.target.name]: e.target.value });
   }
@@ -34,36 +26,19 @@ export default function FeedbackForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const submitter = e.nativeEvent.submitter;
-
+    let res
     try {
       await toast.promise(
         async () => {
           setBlocked(true);
           if (submitter?.name === "send") {
             console.log("Send Message clicked");
-            await axios
-              .post("/api/form", data)
-              .then((res) => {
-                console.log(res);
-              })
-              .catch((err) => {
-                const errorMsg =
-                  err.response?.data?.error || "Something went wrong";
-                throw new Error(errorMsg);
-              });
+            res = await fetchForm(data)
           } else if (submitter?.name === "ai") {
             console.log("AI Reply clicked");
-            await axios
-              .post("/api/formAI", data)
-              .then((res) => {
-                console.log(res);
-              })
-              .catch((err) => {
-                const errorMsg =
-                  err.response?.data?.error || "Something went wrong";
-                throw new Error(errorMsg);
-              });
+            res = await fetchFormAI(data)
           }
+          if (!res?.success) throw new Error(res.error || "Something went wrong");
         },
         {
           loading: "Loading",

@@ -6,9 +6,10 @@ import {
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
-} from "motion/react";
-
-import React, { useRef, useState } from "react";
+} from "framer-motion";
+import Image from "next/image";
+import { useRef, useState } from "react";
+import * as React from 'react'
 
 export const Navbar = ({ children, className }) => {
   const ref = useRef(null);
@@ -191,7 +192,7 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <img src="/Logo.png" alt="logo" width={30} height={30} />
+      <Image src="/Logo.png" alt="logo" width={30} height={30} />
       <span className="font-normal text-black dark:text-white text-sm sm:text-md">
         Darryl Mathias
       </span>

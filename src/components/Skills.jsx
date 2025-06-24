@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 
 import { skills } from "@/data";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import MagicButton from "./MagicButton";
+import MagicButton from "./ui/MagicButton";
 import { CiLocationArrow1 } from "react-icons/ci";
 
 const Skills = () => {

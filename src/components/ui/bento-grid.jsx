@@ -10,13 +10,11 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
-import MagicButton from "../MagicButton";
+import MagicButton from "./MagicButton";
 import { Cover } from "./cover";
+import Image from "next/image";
 
-export const BentoGrid = ({
-  className,
-  children,
-}) => {
+export const BentoGrid = ({ className, children }) => {
   return (
     <div
       className={cn(
@@ -40,6 +38,8 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  height,
+  width
 }) => {
   const leftLists = ["React.js", "MERN", "Next.js"];
   const rightLists = ["Python", "Firebase", "MongoDB"];
@@ -81,10 +81,13 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
+              width={width}
+              height = {height}
               className={cn(imgClassName, "object-cover object-center ")}
+              style={{opacity : 0.7}}
             />
           )}
         </div>
@@ -94,10 +97,11 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
-              //   width={220}
+              width={width}
+              height = {height}
               className="object-cover object-center w-full h-full"
             />
           )}

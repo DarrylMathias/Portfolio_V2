@@ -1,13 +1,9 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useMotionValue, motion, useMotionTemplate } from "motion/react";
-import React from "react";
+import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
+import * as React from "react";
 
-export const HeroHighlight = ({
-  children,
-  className,
-  containerClassName,
-}) => {
+export const HeroHighlight = ({ children, className, containerClassName }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -23,11 +19,7 @@ export const HeroHighlight = ({
     },
   };
 
-  function handleMouseMove({
-    currentTarget,
-    clientX,
-    clientY,
-  }) {
+  function handleMouseMove({ currentTarget, clientX, clientY }) {
     if (!currentTarget) return;
     const { left, top } = currentTarget.getBoundingClientRect();
 
@@ -38,7 +30,7 @@ export const HeroHighlight = ({
     <div
       className={cn(
         "group relative flex h-[40rem] w-full items-center justify-center bg-white dark:bg-black",
-        containerClassName,
+        containerClassName
       )}
       onMouseMove={handleMouseMove}
     >
@@ -100,10 +92,7 @@ export const HeroHighlight = ({
   );
 };
 
-export const Highlight = ({
-  children,
-  className,
-}) => {
+export const Highlight = ({ children, className }) => {
   return (
     <motion.span
       initial={{
@@ -124,7 +113,7 @@ export const Highlight = ({
       }}
       className={cn(
         `relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-1 pb-1 dark:from-indigo-500 dark:to-purple-500`,
-        className,
+        className
       )}
     >
       {children}

@@ -1,18 +1,20 @@
-import { FaLocationArrow } from "react-icons/fa6";
-import { socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
-import FeedbackForm from "./FeedbackForm";
-import Views from "@/components/Views";
+'use server'
 
-const Footer = () => {
+import { socialMedia } from "@/data";
+import FeedbackForm from "./FeedbackForm";
+import Views from "./Views";
+import Image from "next/image";
+
+export default async function Footer(){
   return (
     <footer className="w-full relative pt-15 pb-10 bg-transparent" id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 top-0 z-0 min-h-96 opacity-50">
-        <img
+        <Image
           src="/footer-grid.svg"
           alt="grid"
           className="w-full h-full object-cover"
+          fill = {true}
         />
       </div>
 
@@ -36,7 +38,10 @@ const Footer = () => {
       <Views />
 
       {/* Bottom Section */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-10" id = 'socials'>
+      <div
+        className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-10"
+        id="socials"
+      >
         {/* License and Credits */}
         <p className="text-sm text-muted-foreground text-center md:text-left flex flex-wrap items-center gap-1 max-w-2xl">
           <a
@@ -66,7 +71,7 @@ const Footer = () => {
             CC BY-NC-ND 4.0
           </a>
           {["cc", "by", "nc", "nd"].map((type) => (
-            <img
+            <Image
               key={type}
               src={`https://mirrors.creativecommons.org/presskit/icons/${type}.svg`}
               alt={type}
@@ -75,6 +80,8 @@ const Footer = () => {
                 maxHeight: "1em",
                 marginLeft: "0.2em",
               }}
+              height = {15}
+              width = {15}
             />
           ))}
         </p>
@@ -89,7 +96,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="w-10 h-10 flex justify-center items-center backdrop-blur-md bg-black/40 rounded-lg border border-black/20 transition-transform hover:scale-105"
             >
-              <img
+              <Image
                 src={info.img}
                 alt={`${info.id}-icon`}
                 width={24}
@@ -101,10 +108,9 @@ const Footer = () => {
       </div>
       <p className="text-sm text-muted-foreground px-6 md:px-10 py-5">
         We collect your IP address to determine approximate location for
-        analytics. This data is processed securely and never shared beyond essential services.
+        analytics. This data is processed securely and never shared beyond
+        essential services.
       </p>
     </footer>
   );
 };
-
-export default Footer;

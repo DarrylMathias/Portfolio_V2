@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import {
   MapContainer,
   TileLayer,
@@ -12,10 +12,10 @@ import {
 import { useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
-const MarkerClusterGroup = dynamic(
-  () => import("react-leaflet-markercluster").then((mod) => mod.default),
-  { ssr: false }
-);
+// const MarkerClusterGroup = dynamic(
+//   () => import("react-leaflet-markercluster").then((mod) => mod.default),
+//   { ssr: false }
+// );
 
 // Marker img fetch
 import L from "leaflet";
@@ -34,27 +34,14 @@ const DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const Map = () => {
+export default function Map(props) {
   const [allCoordsObj, setAllCoordsObj] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get(
-          `/api/fetch-coords?secret=${process.env.NEXT_PUBLIC_INTERNAL_SECRET}`
-        )
-        .then((res) => {
-          const filteredCoords = res.data.allUserCoords.filter(
-            (coord) => coord.lat != null && coord.lon != null
-          );
-          setAllCoordsObj(filteredCoords);
-        })
-        .catch((error) => {
-          console.log(`Error in fetching, ${error}`);
-        });
-    };
-    fetchData();
-  }, []);
+    setAllCoordsObj(
+      props.allUserCoords?.filter((coord) => coord.lat && coord.lon) || []
+    );
+  }, [props.allUserCoords]);
 
   return (
     <section
@@ -96,11 +83,18 @@ const Map = () => {
           <Marker key={i} position={[coord.lat, coord.lon]}>
             {coord.city && coord.country && (
               <Popup>
-                {["Floating Router", "Penguinville", "Null Island", "Point Nemo"].includes(coord.city) ? (
+                {[
+                  "Floating Router",
+                  "Penguinville",
+                  "Null Island",
+                  "Point Nemo",
+                ].includes(coord.city) ? (
                   <div>
                     {coord.city}, {coord.country}
                     <br />
-                    <small>(Totally real. <i>Source</i> : Trust me bro 🫡)</small>
+                    <small>
+                      (Totally real. <i>Source</i> : Trust me bro 🫡)
+                    </small>
                   </div>
                 ) : (
                   `${coord.city}, ${coord.country}`
@@ -113,6 +107,4 @@ const Map = () => {
       </MapContainer>
     </section>
   );
-};
-
-export default Map;
+}

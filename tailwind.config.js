@@ -12,6 +12,11 @@ const config = {
     "./data/**/*.{js,jsx}",
   ],
   prefix: "",
+  variants: {
+    extend: {
+      animation: ['motion-safe', 'motion-reduce'],
+    },
+  },
   theme: {
     container: {
       center: true,

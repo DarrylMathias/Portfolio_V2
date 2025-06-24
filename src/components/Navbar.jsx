@@ -10,7 +10,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { ModeToggle } from "./ModeToggle";
+import { ModeToggle } from "./ui/ModeToggle";
 import { useState } from "react";
 import { useEffect } from "react";
 

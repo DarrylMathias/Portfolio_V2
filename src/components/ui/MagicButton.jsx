@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 /**
  *  UI: border magic from tailwind css btns
@@ -8,13 +8,7 @@ import React from "react";
  *  add margin of md:mt-10
  *  remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
  */
-const MagicButton = ({
-  title,
-  icon,
-  position,
-  handleClick,
-  otherClasses,
-}) => {
+const MagicButton = ({ title, icon, position, handleClick, otherClasses }) => {
   return (
     <button
       className="relative inline-flex h-12 w-full md:w-60 md:mt-10 overflow-hidden rounded-lg p-[1px] focus:outline-none mt-8 mb-5"
