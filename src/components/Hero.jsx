@@ -1,11 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
-
 import { useEffect, useState, useMemo } from "react";
 import { cn } from "@/lib/utils";
 import { CiLocationArrow1 } from "react-icons/ci";
 import NavbarSkeleton from "./ui/Skeleton/NavbarSkeleton";
+import Link from 'next/link'
+import axios from "axios";
 const Spotlight = dynamic(
   () => import("./ui/Spotlight").then((mod) => mod.Spotlight),
   { ssr: false }
@@ -28,7 +29,6 @@ const NavbarDemo = dynamic(
     loading: () => <NavbarSkeleton />,
   }
 );
-import Link from 'next/link'
 
 const Hero = () => {
   const words = useMemo(
@@ -61,6 +61,9 @@ const Hero = () => {
     const fetchData = async () => {
       await axios
         .get("/api/get-ip")
+        .then((res) => {
+          // console.log(res);
+        })
         .catch((err) => {
           console.log(`Error in fetching : ${err}`);
         });
