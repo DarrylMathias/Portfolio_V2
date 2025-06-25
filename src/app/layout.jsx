@@ -18,18 +18,27 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: "Darryl Mathias | Full-Stack Developer",
-  description:
-    "Explore the modern, minimalist portfolio of Darryl Mathias — a passionate full-stack developer and software engineer.",
+  title: {
+    default: "Darryl Mathias",
+    template: "%s | Darryl Mathias",
+  },
+  description: "Welcome to the personal portfolio of Darryl Mathias — full stack developer, creative coder, and tech enthusiast.",
   metadataBase: new URL("https://darrylmathias.vercel.app"),
   openGraph: {
-    title: "Darryl Mathias | Portfolio",
-    description:
-      "Showcasing projects, skills, and experience in full-stack web development.",
+    type: "website",
+    locale: "en_IN",
     url: "https://darrylmathias.vercel.app",
     siteName: "Darryl Mathias",
-    locale: "en_US",
-    type: "website",
+    title: "Darryl Mathias | Portfolio",
+    description: "Welcome to the personal portfolio of Darryl Mathias — full stack developer, creative coder, and tech enthusiast.",
+    images: [
+      {
+        url: "/Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Darryl Mathias Portfolio Preview",
+      },
+    ],
   },
 };
 

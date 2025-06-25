@@ -15,6 +15,7 @@ const MarkerClusterGroup = dynamic(
 );
 import 'leaflet/dist/leaflet.css'
 import 'react-leaflet-markercluster/styles'
+import Link from 'next/link'
 
 // Marker img fetch
 import L from "leaflet";
@@ -53,16 +54,16 @@ export default function Map(props) {
       <p className="text-neutral-300 md:mt-4 mb-10 max-w-3xl sm:max-w-3xl text-center">
         From <span className="text-purple-300">Mountain View to Tokyo</span>,
         visitors leave a mark - made using{" "}
-        <a
+        <Link
           href="https://react-leaflet.js.org/"
           className="underline text-blue-400"
         >
           React Leaflet
-        </a>{" "}
+        </Link>{" "}
         and{" "}
-        <a href="https://ipapi.co/" className="underline text-blue-400">
+        <Link href="https://ipapi.co/" className="underline text-blue-400">
           ipapi.co
-        </a>{" "}
+        </Link>{" "}
       </p>
       <MapContainer
         center={[0, 0]}

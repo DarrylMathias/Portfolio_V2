@@ -8,6 +8,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
 import { skills } from "@/data";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Image from "next/image";
+import Link from "next/link";
 
 const AllSkills = () => {
   return (
@@ -25,7 +26,7 @@ const AllSkills = () => {
             <CardContainer key={idx} className="inter-var">
               <CardBody className="w-full sm:h-60 h-40 relative rounded-2xl border border-b-0 border-slate-800 p-5 md:p-8">
                 <div className="bg-[linear-gradient(90deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)]">
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <Link href={item.link} target="_blank" rel="noopener noreferrer">
                     <blockquote>
                       <div
                         aria-hidden="true"
@@ -51,7 +52,7 @@ const AllSkills = () => {
                         {item.description}
                       </CardItem>
                     </blockquote>
-                  </a>
+                  </Link>
                 </div>
               </CardBody>
             </CardContainer>
@@ -61,14 +62,14 @@ const AllSkills = () => {
         <Skeleton className="w-full h-40 rounded-xl" />
       )}
 
-      <a href="/">
+      <Link href="/">
         <MagicButton
           title={"Back"}
           icon={<CiLocationArrow1 />}
           position="left"
           otherClasses="!bg-[#161A31] mx-auto"
         />
-      </a>
+      </Link>
     </section>
   );
 };

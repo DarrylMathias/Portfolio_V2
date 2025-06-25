@@ -4,6 +4,7 @@ import { socialMedia } from "@/data";
 import FeedbackForm from "./FeedbackForm";
 import Views from "./Views";
 import Image from "next/image";
+import Link from 'next/link'
 
 export default async function Footer() {
   return (
@@ -46,32 +47,34 @@ export default async function Footer() {
       >
         {/* License and Credits */}
         <p className="text-sm text-muted-foreground text-center md:text-left flex flex-wrap items-center gap-1 max-w-2xl">
-          <a
-            href="https://darrylmathias.com"
+          <Link
+            href="https://darrylmathias.vercel.app"
             className="underline"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Darryl Mathias Website"
           >
             Darryl Mathias Portfolio Website
-          </a>{" "}
+          </Link>{" "}
           © 2025 by{" "}
-          <a
+          <Link
             href="https://www.linkedin.com/in/darryl-mathias-020241317/"
             className="underline"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Darryl Mathias Linkedin"
           >
             Darryl Mathias
-          </a>{" "}
+          </Link>{" "}
           is licensed under{" "}
-          <a
+          <Link
             href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
             className="underline"
             target="_blank"
             rel="noopener noreferrer"
           >
             CC BY-NC-ND 4.0
-          </a>
+          </Link>
           {["cc", "by", "nc", "nd"].map((type) => (
             <Image
               key={type}
@@ -91,8 +94,8 @@ export default async function Footer() {
         {/* Social Media Icons */}
         <div className="flex items-center gap-4">
           {socialMedia.map((info) => (
-            <a
-              aria-label={info.id}
+            <Link
+              aria-label = {info.about}
               key={info.id}
               href={info.link}
               target="_blank"
@@ -106,7 +109,7 @@ export default async function Footer() {
                 height={24}
                 loading="lazy"
               />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

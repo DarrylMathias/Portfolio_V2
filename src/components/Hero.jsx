@@ -28,6 +28,7 @@ const NavbarDemo = dynamic(
     loading: () => <NavbarSkeleton />,
   }
 );
+import Link from 'next/link'
 
 const Hero = () => {
   const words = useMemo(
@@ -116,7 +117,7 @@ const Hero = () => {
               </p>
 
               {/* Button */}
-                <a
+                <Link
                   className="relative inline-flex h-12 overflow-hidden
               rounded-full p-[1px] focus:outline-none focus:ring-2
               focus:ring-slate-400 focus:ring-offset-2
@@ -127,7 +128,7 @@ const Hero = () => {
                     View Projects&nbsp;&nbsp;
                     <CiLocationArrow1 />
                   </span>
-                </a>
+                </Link>
             </div>
           </div>
         </div>

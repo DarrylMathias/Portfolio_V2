@@ -11,6 +11,7 @@ const PinContainer = dynamic(
 import { FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from 'next/link'
 
 const RecentProjects = () => {
   return (
@@ -21,7 +22,7 @@ const RecentProjects = () => {
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-32 gap-y-18 mt-10">
         {projects.map((item) => (
-          <a
+          <Link
             href={item.link}
             target="_blank"
             key={item.id}
@@ -89,7 +90,7 @@ const RecentProjects = () => {
                 </div>
               </PinContainer>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>

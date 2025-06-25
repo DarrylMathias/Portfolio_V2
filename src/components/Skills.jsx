@@ -6,6 +6,7 @@ import { skills } from "@/data";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import MagicButton from "./ui/MagicButton";
 import { CiLocationArrow1 } from "react-icons/ci";
+import Link from 'next/link'
 
 const Skills = () => {
   return (
@@ -26,14 +27,14 @@ const Skills = () => {
         </div>
       </div>
 
-      <a href="/skills">
+      <Link href="/skills">
         <MagicButton
           title={"View all skills"}
           icon={<CiLocationArrow1 />}
           position="left"
           otherClasses="!bg-[#161A31] mx-auto"
         />
-      </a>
+      </Link>
     </section>
   );
 };

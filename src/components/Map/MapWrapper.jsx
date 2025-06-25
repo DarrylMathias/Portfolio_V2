@@ -5,11 +5,11 @@ import MapWrapperClient from "./MapWrapperClient";
 export async function fetchCoords() {
   try {
     await connect();
-    const rawDatas =  await locationModel.find().select("-ip");
+    const rawDatas = await locationModel.find().select("-ip");
     return rawDatas.map((rawData) => ({
       ...rawData.toObject(),
-      _id : rawData._id.toString()
-    }))
+      _id: rawData._id.toString(),
+    }));
   } catch (error) {
     console.log(`Error : ${error}`);
   }

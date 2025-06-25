@@ -300,26 +300,31 @@ export const socialMedia = [
   {
     id: 1,
     img: "/linkedin.svg",
-    link : 'https://www.linkedin.com/in/darryl-mathias-020241317/'
+    link : 'https://www.linkedin.com/in/darryl-mathias-020241317/',
+    about : 'Darryl Mathias Linkedin'
   },
   {
     id: 2,
     img: "/git.svg",
-    link : 'https://github.com/DarrylMathias'
+    link : 'https://github.com/DarrylMathias',
+    about : 'Darryl Mathias Github'
   },
   {
     id: 3,
     img: "/gmail.svg",
-    link : 'mailto:darrylnevmat@gmail.com'
+    link : 'mailto:darrylnevmat@gmail.com',
+    about : 'Darryl Mathias Gmail'
   },
   {
     id: 4,
     img : '/quora.svg',
-    link : 'https://www.quora.com/profile/Darryl-Mathias-5'
+    link : 'https://www.quora.com/profile/Darryl-Mathias-5',
+    about : 'Darryl Mathias Quora'
   },
   {
     id: 5,
     img : '/yt.svg',
-    link : 'https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng'
+    link : 'https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng',
+    about : 'Darryl Mathias Youtube'
   }
 ];

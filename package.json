@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "clean": "rm -rf node_modules .next pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {
     "@google/genai": "^1.5.1",
@@ -17,7 +18,7 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-three/drei": "^10.2.0",
-    "@react-three/fiber": "^9.0.0-alpha.8",
+    "@react-three/fiber": "9.0.0-alpha.8",
     "@tabler/icons-react": "^3.34.0",
     "@tailwindcss/postcss": "^4.1.10",
     "@tsparticles/engine": "^3.8.1",
@@ -35,6 +36,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "mongoose": "^8.15.2",
     "next": "15.4.0-canary.94",
+    "next-seo": "^6.8.0",
     "next-sitemap": "^4.2.3",
     "next-themes": "^0.4.6",
     "nodemailer": "^7.0.3",
@@ -43,7 +45,7 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
-    "react-leaflet": "^5.0.0-rc.2",
+    "react-leaflet": "5.0.0-rc.2",
     "react-leaflet-markercluster": "^5.0.0-rc.0",
     "react-lottie": "^1.2.10",
     "tailwind-merge": "^3.3.1",

@@ -13,6 +13,7 @@ import {
 import { ModeToggle } from "./ui/ModeToggle";
 import { useState } from "react";
 import { useEffect } from "react";
+import Link from 'next/link'
 
 export function NavbarDemo({ isRoute }) {
   const [navItems, setNavItems] = useState([]);
@@ -23,23 +24,23 @@ export function NavbarDemo({ isRoute }) {
         ? [
             {
               name: "About",
-              link: "https://darrylmathias.vercel.app/#about",
+              link: "/#about",
             },
             {
               name: "Projects",
-              link: "https://darrylmathias.vercel.app/#projects",
+              link: "/#projects",
             },
             {
               name: "Skills",
-              link: "https://darrylmathias.vercel.app/#skills",
+              link: "/#skills",
             },
             {
               name: "Contact",
-              link: "https://darrylmathias.vercel.app/#contact",
+              link: "/#contact",
             },
             {
               name: "Socials",
-              link: "https://darrylmathias.vercel.app/#socials",
+              link: "/#socials",
             },
           ]
         : [
@@ -78,16 +79,16 @@ export function NavbarDemo({ isRoute }) {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">
-              <a
+              <Link
                 href="/Darryl_Mathias_Resume_Latest.pdf"
                 download="Darryl_Mathias"
               >
                 Resume
-              </a>
+              </Link>
             </NavbarButton>
-            <a href="https://www.linkedin.com/in/darryl-mathias-020241317/">
+            <Link href="https://www.linkedin.com/in/darryl-mathias-020241317/" target = '_blank'>
               <NavbarButton variant="primary">Let's talk</NavbarButton>
-            </a>
+            </Link>
           </div>
         </NavBody>
 
@@ -106,14 +107,14 @@ export function NavbarDemo({ isRoute }) {
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </Link>
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
@@ -121,9 +122,9 @@ export function NavbarDemo({ isRoute }) {
                 variant="primary"
                 className="w-full"
               >
-                <a href="https://www.linkedin.com/in/darryl-mathias-020241317/">
+                <Link href="https://www.linkedin.com/in/darryl-mathias-020241317/">
                   Hire Me
-                </a>
+                </Link>
               </NavbarButton>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}

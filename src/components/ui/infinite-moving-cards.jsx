@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import * as React from "react";
+import Link from 'next/link'
 
 export const InfiniteMovingCards = ({
   items,
@@ -79,7 +80,7 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <a href={`${item.link}`} key = {item.id} target = '_blank'>
+          <Link href={`${item.link}`} key = {item.id} target = '_blank'>
             <li
               //   change md:w-[450px] to md:w-[60vw] , px-8 py-6 to p-16, border-slate-700 to border-slate-800
               className="w-[90vw] max-w-full relative rounded-2xl border border-b-0
@@ -118,7 +119,7 @@ export const InfiniteMovingCards = ({
                 </span>
               </blockquote>
             </li>
-          </a>
+          </Link>
         ))}
       </ul>
     </div>
