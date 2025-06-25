@@ -20,14 +20,14 @@ This is my personal portfolio website built with **Next.js**, showcasing my skil
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/portfolio.git
-cd portfolio
+git clone https://github.com/DarrylMathias/Portfolio_V2.git
 pnpm install
-pnpm dev
+pnpm run dev
+```
 
 ## 🔗 Live Demo
 [View Portfolio](https://darrylmathias.vercel.app)
 
 ## 📬 Contact
-LinkedIn: https://linkedin.com/in/your-profile
-Email: your@email.com
+[Linkedin](https://www.linkedin.com/in/darryl-mathias-020241317/)
+[Email](mailto:darrylnevmat@gmail.com)
