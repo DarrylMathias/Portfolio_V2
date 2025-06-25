@@ -58,6 +58,14 @@ const Hero = () => {
     if (typeof window !== "undefined") {
       setIsMobileHeight(window.innerHeight < 768);
     }
+    const fetchData = async () => {
+      await axios
+        .get("/api/get-ip")
+        .catch((err) => {
+          console.log(`Error in fetching : ${err}`);
+        });
+    };
+    fetchData();
   }, []);
 
   return (

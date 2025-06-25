@@ -20,7 +20,7 @@ const Views = () => {
     };
     fetchData();
     setLoading(true);
-    const interval = setInterval(fetchData, 30000);
+    const interval = setInterval(fetchData, 3000);
     return () => clearInterval(interval);
   }, []);
 
