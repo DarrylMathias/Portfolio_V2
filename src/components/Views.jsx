@@ -17,7 +17,8 @@ const Views = () => {
           console.log(`Error : ${err}`);
         });
     };
-    const interval = setInterval(fetchData, 30000);
+    fetchData()
+    const interval = setInterval(fetchData, 10000);
     return () => clearInterval(interval);
   }, []);
 
