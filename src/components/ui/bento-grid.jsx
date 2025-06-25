@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 import { cn } from "@/lib/utils";
 
@@ -39,10 +40,10 @@ export const BentoGridItem = ({
   titleClassName,
   spareImg,
   height,
-  width
+  width,
 }) => {
-  const leftLists = ["React.js", "MERN", "Next.js"];
-  const rightLists = ["Python", "Firebase", "MongoDB"];
+  const leftLists = useMemo(() => ["React.js", "MERN", "Next.js"], []);
+  const rightLists = useMemo(() => ["Python", "Firebase", "MongoDB"], []);
 
   const [copied, setCopied] = useState(false);
 
@@ -83,11 +84,11 @@ export const BentoGridItem = ({
           {img && (
             <Image
               src={img}
-              alt={img}
+              alt={title || "bento image"}
               width={width}
-              height = {height}
+              height={height}
               className={cn(imgClassName, "object-cover object-center ")}
-              style={{opacity : 0.7}}
+              style={{ opacity: 0.7 }}
             />
           )}
         </div>
@@ -101,7 +102,7 @@ export const BentoGridItem = ({
               src={spareImg}
               alt={spareImg}
               width={width}
-              height = {height}
+              height={height}
               className="object-cover object-center w-full h-full"
             />
           )}

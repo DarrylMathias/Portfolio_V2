@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import * as React from 'react'
+import * as React from "react";
 
 export const Navbar = ({ children, className }) => {
   const ref = useRef(null);
@@ -134,10 +134,7 @@ export const MobileNav = ({ children, className, visible }) => {
   );
 };
 
-export const MobileNavHeader = ({
-  children,
-  className,
-}) => {
+export const MobileNavHeader = ({ children, className }) => {
   return (
     <div
       className={cn(
@@ -150,12 +147,7 @@ export const MobileNavHeader = ({
   );
 };
 
-export const MobileNavMenu = ({
-  children,
-  className,
-  isOpen,
-  onClose,
-}) => {
+export const MobileNavMenu = ({ children, className, isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -175,10 +167,7 @@ export const MobileNavMenu = ({
   );
 };
 
-export const MobileNavToggle = ({
-  isOpen,
-  onClick,
-}) => {
+export const MobileNavToggle = ({ isOpen, onClick }) => {
   return isOpen ? (
     <IconX className="text-black dark:text-white" onClick={onClick} />
   ) : (

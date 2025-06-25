@@ -4,6 +4,7 @@ import { useState, useEffect, useId } from "react";
 
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import OptimizedMotion from "@/components/ui/OptimizedMotion";
 
 export function ContainerTextFlip({
   words = ["better", "modern", "beautiful", "awesome"],
@@ -52,11 +53,11 @@ export function ContainerTextFlip({
         "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
         "dark:[background:linear-gradient(to_bottom,#374151,#1f2937)]",
         "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]",
-        className,
+        className
       )}
       key={words[currentWordIndex]}
     >
-      <motion.div
+      <OptimizedMotion
         transition={{
           duration: animationDuration / 1000,
           ease: "easeInOut",
@@ -65,7 +66,7 @@ export function ContainerTextFlip({
         ref={textRef}
         layoutId={`word-div-${words[currentWordIndex]}-${id}`}
       >
-        <motion.div className="inline-block">
+        <OptimizedMotion className="inline-block">
           {words[currentWordIndex].split("").map((letter, index) => (
             <motion.span
               key={index}
@@ -84,8 +85,8 @@ export function ContainerTextFlip({
               {letter}
             </motion.span>
           ))}
-        </motion.div>
-      </motion.div>
+        </OptimizedMotion>
+      </OptimizedMotion>
     </motion.p>
   );
 }

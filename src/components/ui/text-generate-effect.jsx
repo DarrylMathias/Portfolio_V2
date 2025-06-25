@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { AuroraText } from "../magicui/aurora-text";
+import OptimizedMotion from "@/components/ui/OptimizedMotion";
 
 export const TextGenerateEffect = ({
   words,
@@ -28,7 +29,7 @@ export const TextGenerateEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <OptimizedMotion ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
             <motion.span
@@ -53,7 +54,7 @@ export const TextGenerateEffect = ({
             </motion.span>
           );
         })}
-      </motion.div>
+      </OptimizedMotion>
     );
   };
 

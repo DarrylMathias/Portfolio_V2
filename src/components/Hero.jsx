@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState, useMemo } from "react";
 import { cn } from "@/lib/utils";
 import { CiLocationArrow1 } from "react-icons/ci";
+import NavbarSkeleton from "./ui/Skeleton/NavbarSkeleton";
 const Spotlight = dynamic(
   () => import("./ui/Spotlight").then((mod) => mod.Spotlight),
   { ssr: false }
@@ -17,10 +18,16 @@ const AuroraText = dynamic(
   () => import("./magicui/aurora-text").then((mod) => mod.AuroraText),
   {
     ssr: false,
-    loading: () => <span>&nbsp;&nbsp;Digital Interfaces </span>,
+    loading: () => <span>&nbsp;Digital Interfaces </span>,
   }
 );
-import { NavbarDemo } from "./Navbar";
+const NavbarDemo = dynamic(
+  () => import("@/components/Navbar").then((mod) => mod.NavbarDemo),
+  {
+    ssr: false,
+    loading: () => <NavbarSkeleton />,
+  }
+);
 
 const Hero = () => {
   const words = useMemo(
@@ -109,20 +116,18 @@ const Hero = () => {
               </p>
 
               {/* Button */}
-              <a href="#projects">
-                <button
+                <a
                   className="relative inline-flex h-12 overflow-hidden
               rounded-full p-[1px] focus:outline-none focus:ring-2
               focus:ring-slate-400 focus:ring-offset-2
-              focus:ring-offset-slate-50 my-2"
+              focus:ring-offset-slate-50 my-2" href="#projects"
                 >
                   <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] prefers-reduced-motion" />
                   <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 py-2 text-sm font-medium text-white backdrop-blur-3xl">
                     View Projects&nbsp;&nbsp;
                     <CiLocationArrow1 />
                   </span>
-                </button>
-              </a>
+                </a>
             </div>
           </div>
         </div>

@@ -4,12 +4,13 @@ import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 import { AuroraText } from "../magicui/aurora-text";
+import OptimizedMotion from "@/components/ui/OptimizedMotion";
 
 export const TypewriterEffect = ({ words, className, cursorClassName }) => {
   const wordsArray = words.split(" ").map((word, i) => {
     return {
       text: word.split(""),
-      useAurora : i > 3
+      useAurora: i > 3,
     };
   });
 
@@ -35,7 +36,7 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope} className="inline">
+      <OptimizedMotion ref={scope} className="inline">
         {wordsArray.map((word, idx) => {
           return (
             <div key={`word-${idx}`} className="inline-block">
@@ -43,18 +44,16 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
                 <motion.span
                   initial={{}}
                   key={`char-${index}-${idx}`}
-                  className={cn(
-                    `dark:text-white text-black opacity-0 hidden`,
-                  )}
+                  className={cn(`dark:text-white text-black opacity-0 hidden`)}
                 >
-                  {word.useAurora ? (<AuroraText>{char}</AuroraText>) : (char)}
+                  {word.useAurora ? <AuroraText>{char}</AuroraText> : char}
                 </motion.span>
               ))}
               &nbsp;
             </div>
           );
         })}
-      </motion.div>
+      </OptimizedMotion>
     );
   };
   return (
@@ -122,7 +121,7 @@ export const TypewriterEffectSmooth = ({
 
   return (
     <div className={cn("flex space-x-1 my-6", className)}>
-      <motion.div
+      <OptimizedMotion
         className="overflow-hidden pb-2"
         initial={{
           width: "0%",
@@ -144,7 +143,7 @@ export const TypewriterEffectSmooth = ({
         >
           {renderWords()}{" "}
         </div>{" "}
-      </motion.div>
+      </OptimizedMotion>
       <motion.span
         initial={{
           opacity: 0,

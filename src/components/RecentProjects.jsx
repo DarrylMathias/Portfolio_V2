@@ -1,8 +1,16 @@
+"use client";
+
 import * as React from "react";
 import { projects } from "@/data";
-import { PinContainer } from "@/components/ui/3d-pin";
+import dynamic from "next/dynamic";
+import CardSkeleton from "@/components/ui/Skeleton/CardSkeleton";
+const PinContainer = dynamic(
+  () => import("@/components/ui/3d-pin").then((mod) => mod.PinContainer),
+  { ssr: false, loading: () => <CardSkeleton /> }
+);
 import { FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const RecentProjects = () => {
   return (
@@ -13,14 +21,16 @@ const RecentProjects = () => {
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-32 gap-y-18 mt-10">
         {projects.map((item) => (
-          <a href={`${item.link}`} key={item.id} target="_blank">
-            <div
-              className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
-              key={item.id}
-            >
+          <a
+            href={item.link}
+            target="_blank"
+            key={item.id}
+          >
+            <div className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]">
               <PinContainer
                 title={item.floatingTitle}
                 href="https://twitter.com/mannupaaji"
+                className = 'm-4'
               >
                 <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                   <div className="relative w-full h-full overflow-hidden lg:rounded-3xl">
@@ -31,6 +41,7 @@ const RecentProjects = () => {
                     alt="cover"
                     className="z-10 absolute bottom-0"
                     fill={true}
+                    loading="lazy"
                   />
                 </div>
 
@@ -63,6 +74,7 @@ const RecentProjects = () => {
                           alt="icon5"
                           className="p-2"
                           fill={true}
+                          loading="lazy"
                         />
                       </div>
                     ))}

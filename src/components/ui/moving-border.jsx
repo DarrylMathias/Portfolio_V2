@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
+import OptimizedMotion from "@/components/ui/OptimizedMotion";
 
 export function Button({
   borderRadius = "1.75rem",
@@ -108,7 +109,7 @@ export const MovingBorder = ({
           ref={pathRef}
         />
       </svg>
-      <motion.div
+      <OptimizedMotion
         style={{
           position: "absolute",
           top: 0,
@@ -118,7 +119,7 @@ export const MovingBorder = ({
         }}
       >
         {children}
-      </motion.div>
+      </OptimizedMotion>
     </>
   );
 };

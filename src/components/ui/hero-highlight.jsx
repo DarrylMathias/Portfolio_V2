@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import * as React from "react";
+import OptimizedMotion from "@/components/ui/OptimizedMotion";
 
 export const HeroHighlight = ({ children, className, containerClassName }) => {
   const mouseX = useMotionValue(0);
@@ -46,7 +47,7 @@ export const HeroHighlight = ({ children, className, containerClassName }) => {
           backgroundImage: dotPatterns.dark.default,
         }}
       />
-      <motion.div
+      <OptimizedMotion
         className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden"
         style={{
           backgroundImage: dotPatterns.light.hover,
@@ -66,7 +67,7 @@ export const HeroHighlight = ({ children, className, containerClassName }) => {
           `,
         }}
       />
-      <motion.div
+      <OptimizedMotion
         className="pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block"
         style={{
           backgroundImage: dotPatterns.dark.hover,

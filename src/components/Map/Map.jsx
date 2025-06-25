@@ -1,25 +1,23 @@
 "use client";
 
-import * as React from "react";
 import {
   MapContainer,
   TileLayer,
-  useMap,
-  useMapEvents,
   Marker,
   Popup,
 } from "react-leaflet";
 import { useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
-// const MarkerClusterGroup = dynamic(
-//   () => import("react-leaflet-markercluster").then((mod) => mod.default),
-//   { ssr: false }
-// );
+const MarkerClusterGroup = dynamic(
+  () => import("react-leaflet-markercluster").then((mod) => mod.default),
+  { ssr: false }
+);
+import 'leaflet/dist/leaflet.css'
+import 'react-leaflet-markercluster/styles'
 
 // Marker img fetch
 import L from "leaflet";
-import axios from "axios";
 
 const DefaultIcon = L.icon({
   iconUrl: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Yellow_dot.svg", // simple red dot
@@ -78,7 +76,7 @@ export default function Map(props) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <MarkerClusterGroup chunkedLoading showCoverageOnHover={false}> */}
+        <MarkerClusterGroup chunkedLoading showCoverageOnHover={false} zoomToBoundsOnClick spiderfyOnMaxZoom removeOutsideVisibleBounds animate>
         {allCoordsObj.map((coord, i) => (
           <Marker key={i} position={[coord.lat, coord.lon]}>
             {coord.city && coord.country && (
@@ -103,7 +101,7 @@ export default function Map(props) {
             )}
           </Marker>
         ))}
-        {/* </MarkerClusterGroup> */}
+        </MarkerClusterGroup>
       </MapContainer>
     </section>
   );

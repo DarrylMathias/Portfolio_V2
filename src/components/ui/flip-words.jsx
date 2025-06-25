@@ -2,12 +2,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
 import { cn } from "@/lib/utils";
+import OptimizedMotion from "@/components/ui/OptimizedMotion";
 
-export const FlipWords = ({
-  words,
-  duration = 3000,
-  className,
-}) => {
+export const FlipWords = ({ words, duration = 3000, className }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -30,7 +27,7 @@ export const FlipWords = ({
         setIsAnimating(false);
       }}
     >
-      <motion.div
+      <OptimizedMotion
         initial={{
           opacity: 0,
           y: 10,
@@ -58,7 +55,6 @@ export const FlipWords = ({
         )}
         key={currentWord}
       >
-        
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
@@ -87,7 +83,7 @@ export const FlipWords = ({
             <span className="inline-block">&nbsp;</span>
           </motion.span>
         ))}
-      </motion.div>
+      </OptimizedMotion>
     </AnimatePresence>
   );
 };

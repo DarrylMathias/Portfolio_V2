@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState, useEffect, useId } from "react";
 import { cn } from "@/lib/utils";
 import { SparklesCore } from "@/components/ui/sparkles";
+import OptimizedMotion from "@/components/ui/OptimizedMotion";
 
 export const Cover = ({ children, className }) => {
   const [hovered, setHovered] = useState(false);
@@ -35,7 +36,7 @@ export const Cover = ({ children, className }) => {
     >
       <AnimatePresence>
         {hovered && (
-          <motion.div
+          <OptimizedMotion
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -46,7 +47,7 @@ export const Cover = ({ children, className }) => {
             }}
             className="h-full w-full overflow-hidden absolute inset-0"
           >
-            <motion.div
+            <OptimizedMotion
               animate={{
                 translateX: ["-50%", "0%"],
               }}
@@ -75,8 +76,8 @@ export const Cover = ({ children, className }) => {
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />
-            </motion.div>
-          </motion.div>
+            </OptimizedMotion>
+          </OptimizedMotion>
         )}
       </AnimatePresence>
       {beamPositions.map((position, index) => (

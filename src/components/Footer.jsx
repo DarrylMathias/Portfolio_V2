@@ -1,11 +1,11 @@
-'use server'
+"use server";
 
 import { socialMedia } from "@/data";
 import FeedbackForm from "./FeedbackForm";
 import Views from "./Views";
 import Image from "next/image";
 
-export default async function Footer(){
+export default async function Footer() {
   return (
     <footer className="w-full relative pt-15 pb-10 bg-transparent" id="contact">
       {/* background grid */}
@@ -13,8 +13,10 @@ export default async function Footer(){
         <Image
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full object-cover"
-          fill = {true}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          loading="lazy"
         />
       </div>
 
@@ -80,8 +82,8 @@ export default async function Footer(){
                 maxHeight: "1em",
                 marginLeft: "0.2em",
               }}
-              height = {15}
-              width = {15}
+              height={15}
+              width={15}
             />
           ))}
         </p>
@@ -90,6 +92,7 @@ export default async function Footer(){
         <div className="flex items-center gap-4">
           {socialMedia.map((info) => (
             <a
+              aria-label={info.id}
               key={info.id}
               href={info.link}
               target="_blank"
@@ -101,6 +104,7 @@ export default async function Footer(){
                 alt={`${info.id}-icon`}
                 width={24}
                 height={24}
+                loading="lazy"
               />
             </a>
           ))}
@@ -113,4 +117,4 @@ export default async function Footer(){
       </p>
     </footer>
   );
-};
+}
