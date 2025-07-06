@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+const config = {
   siteUrl: "https://darrylmathias.vercel.app",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
@@ -7,3 +7,5 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
 };
+
+export default config;

@@ -41,7 +41,7 @@ export default function FeedbackForm() {
           if (!res?.success) throw new Error(res.error || "Something went wrong");
         },
         {
-          loading: "Loading",
+          loading: "Loading...",
           success:
             "Message sent successfully! We'll reach back in a short time",
           error: (err) => (err ? err.message : "Unknown error occured"),
