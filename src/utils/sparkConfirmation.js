@@ -222,14 +222,9 @@ export default async function sparkConfirmation(name, email, id) {
 </html>`,
         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.error('❌ Email error:', error);
-            } else {
-                console.log('✅ Email sent:', info.response);
-            }
-        });
-
+        const info = await transporter.sendMail(mailOptions);
+        console.log('✅ Email sent successfully:', info.response);
+        return info;
     } catch (err) {
         console.error("❌ Failed to generate AI response or send email:", err);
     }
