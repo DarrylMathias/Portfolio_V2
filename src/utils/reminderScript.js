@@ -28,12 +28,12 @@ export default async function setReminder() {
             console.log(`Processing ${user.name}: ${hoursElapsed} hours old`);
 
             if (hoursElapsed >= 24 && hoursElapsed <= 48) {
-                sparkConfirmation(user.name, user.email, user._id)
+                await sparkConfirmation(user.name, user.email, user._id)
                 console.log(`Sent DAY 1 reminder for ${user.name}`);
                 await new Promise(resolve => setTimeout(resolve, 100));
 
             } else if (hoursElapsed >= 72 && hoursElapsed <= 96) {
-                sparkConfirmation(user.name, user.email, user._id)
+                await sparkConfirmation(user.name, user.email, user._id)
                 console.log(`Sent DAY 3 final reminder for ${user.name}`);
                 await new Promise(resolve => setTimeout(resolve, 100));
 
