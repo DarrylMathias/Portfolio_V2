@@ -32,7 +32,7 @@ export default async function sparkForm(formData) {
                 email: res?.data?.email,
                 place: res?.data?.place
             })
-            await sparkConfirmation(res.data.name, res.data.email, user._id)
+            sparkConfirmation(res.data.name, res.data.email, user._id)
             console.log(`${res.data.name} creation success`);
             return { success: true }
         }
