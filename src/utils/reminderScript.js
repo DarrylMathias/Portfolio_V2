@@ -21,20 +21,20 @@ export default async function setReminder() {
             })
         } else {
             users = await userModel.find({
-                hasConfirmed: { $ne: true }
+                hasConfirmed: false
             })
         }
         for (const user of users) {
             const hoursElapsed = convertToHours(user?.createdAt.getTime());
-            console.log(`Processing ${user.name}: ${hoursElapsed} hours old`);
+            console.log(`Processing ${user.email}: ${hoursElapsed} hours old`);
 
             if (hoursElapsed >= 24 && hoursElapsed <= 48) {
-                sparkConfirmation(user.name, user.email, user._id)
+                await sparkConfirmation(user.name, user.email, user._id)
                 console.log(`Sent DAY 1 reminder for ${user.name}`);
                 await new Promise(resolve => setTimeout(resolve, 100));
 
             } else if (hoursElapsed >= 72 && hoursElapsed <= 96) {
-                sparkConfirmation(user.name, user.email, user._id)
+                await sparkConfirmation(user.name, user.email, user._id)
                 console.log(`Sent DAY 3 final reminder for ${user.name}`);
                 await new Promise(resolve => setTimeout(resolve, 100));
 
@@ -42,10 +42,9 @@ export default async function setReminder() {
                 await userModel.findOneAndDelete({
                     _id: user._id
                 })
-                console.log(`Deleted user account for ${user.name} (${Math.floor(hoursElapsed / 24)} days old)`);
-
+                console.log(`Deleted user account for ${user.email} (${Math.floor(hoursElapsed / 24)} days old)`);
             } else {
-                console.log(`No action for ${user.name} (${Math.floor(hoursElapsed / 24)} days old)`);
+                console.log(`No action for ${user.email} (${Math.floor(hoursElapsed / 24)} days old)`);
             }
         }
     } catch (err) {
