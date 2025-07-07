@@ -9,14 +9,7 @@ export async function GET(request, { params }) {
         if (apiKey !== process.env.API_KEY) {
             return NextResponse.json({ error: 'Unauthorized: Invalid API key' }, { status: 401 });
         }
-        setReminder()
-            .then(() => {
-                console.log('Script executed successfully');
-            })
-            .catch((err) => {
-                console.error('Script error:', err);
-                console.log('Script failed');
-            });
+        await setReminder();
         return NextResponse.json({
             success: true,
             message: 'Started reminder function..',

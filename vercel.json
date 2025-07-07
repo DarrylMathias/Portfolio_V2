@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/reminder/[apiKey].js": {
+      "maxDuration": 3000
+    }
+  }
+}
