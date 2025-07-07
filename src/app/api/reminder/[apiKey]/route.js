@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(request, { params }) {
     try {
-        await connect()
         const { apiKey } = await params
 
         if (apiKey !== process.env.API_KEY) {

@@ -13,6 +13,7 @@ export default async function setReminder() {
     try {
         console.log("Starting reminder script...");
         await connect()
+
         let users
         if (process.env.NODE_ENV === 'development') {
             users = await userModel.find({
@@ -28,12 +29,12 @@ export default async function setReminder() {
             console.log(`Processing ${user.name}: ${hoursElapsed} hours old`);
 
             if (hoursElapsed >= 24 && hoursElapsed <= 48) {
-                await sparkConfirmation(user.name, user.email, user._id)
+                sparkConfirmation(user.name, user.email, user._id)
                 console.log(`Sent DAY 1 reminder for ${user.name}`);
                 await new Promise(resolve => setTimeout(resolve, 100));
 
             } else if (hoursElapsed >= 72 && hoursElapsed <= 96) {
-                await sparkConfirmation(user.name, user.email, user._id)
+                sparkConfirmation(user.name, user.email, user._id)
                 console.log(`Sent DAY 3 final reminder for ${user.name}`);
                 await new Promise(resolve => setTimeout(resolve, 100));
 
