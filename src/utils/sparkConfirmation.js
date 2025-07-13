@@ -207,8 +207,8 @@ export default async function sparkConfirmation(name, email, id) {
             <p>To complete your subscription and start receiving your daily dose of motivation, please confirm your email address below:</p>
             
             <div class="button-container">
-                <a href="http://localhost:3000/api/confirm/${id}" class="button button-confirm">✅ Confirm Subscription</a>
-                <a href="http://localhost:3000/api/deleteUser/${id}" class="button button-reject">❌ Unsubscribe</a>
+                <a href="http://darrylmathias.vercel.app/api/confirm/${id}" class="button button-confirm">✅ Confirm Subscription</a>
+                <a href="http://darrylmathias.vercel.app/api/deleteUser/${id}" class="button button-reject">❌ Unsubscribe</a>
             </div>
             
             <div class="divider"></div>
