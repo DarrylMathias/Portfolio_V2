@@ -127,13 +127,20 @@ export const BentoGridItem = ({
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
           {/* remove mb-2 mt-2 */}
           <div
-            className={`font-sans text-xl lg:text-3xl max-w-96 font-bold z-10`}
+            className={`font-sans text-xl lg:text-3xl max-w-120 font-bold z-10`}
           >
             {id === 1 ? (
               <>
-                {"Building towards something bigger — thoughtful ideas, "}
-                <Cover className="mx-5">built fast</Cover>
-                {", made real.."}
+                <div>
+                  Code is my canvas.{" "}
+                  <span className="sm:text-violet-400">Big ideas?</span>
+                </div>
+                <div>
+                  I ship fast, <span>break faster</span>,
+                </div>
+                <div>
+                  <Cover className="mx-0">build better.</Cover>
+                </div>
               </>
             ) : (
               title
@@ -152,7 +159,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                      lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
@@ -165,7 +172,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                      lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
@@ -173,6 +180,12 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
+          {id === 4 && (
+            <span className="absolute top-3 right-3 text-[10px] sm:text-xs bg-green-600 text-white px-2 py-1 rounded-full shadow-md z-20 p-4 hidden sm:block">
+              🚀 Open for Internships & Freelance
+            </span>
+          )}
+
           {id === 6 && (
             <div className="mt-2 sm:mt-5 relative">
               {/* button border magic from tailwind css buttons  */}

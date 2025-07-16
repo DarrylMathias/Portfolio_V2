@@ -9,7 +9,7 @@ export const gridItems = [
   {
     id: 1,
     title:
-      "Building towards something bigger — thoughtful ideas, built fast, made real..",
+      "Code is my canvas. Big ideas? I ship fast, break faster, build better.",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -21,7 +21,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Ideas are global. I just follow where they go.",
+    title: "No borders. Just ideas. Let’s build, wherever you are.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-4",
     imgClassName: "",
@@ -45,9 +45,9 @@ export const gridItems = [
   // },
   {
     id: 4,
-    title: "Passionate about tech, always building toward something bigger.",
+    title: "Passionate about tech, now building for startups and clients.",
     description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1 text-base font-medium leading-snug",
     imgClassName: "",
     titleClassName: "justify-start",
     img: "/grid.svg",
@@ -70,7 +70,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Have something bold in mind? Let’s build it.",
+    title: "Got something brewing? Let’s build it.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -326,5 +326,32 @@ export const socialMedia = [
     img : '/yt.svg',
     link : 'https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng',
     about : 'Darryl Mathias Youtube'
+  },
+  {
+    id: 6,
+    img : '/reddit.svg',
+    link : 'https://www.reddit.com/user/Spiritual-Banana1048/',
+    about : 'Darryl Mathias Reddit'
   }
 ];
+
+export const freelanceProfiles = [
+  {
+    id: "freelancer",
+    link: "https://www.freelancer.com/u/darrylm16",
+    imgLink: "https://www.freelancer.com/favicon.ico",
+    about: "Freelancer Profile",
+  },
+  {
+    id: "fiverr",
+    link: "https://www.fiverr.com/darrylmathias/",
+    imgLink: "https://www.fiverr.com/favicon.ico",
+    about: "Fiverr Profile",
+  },
+  {
+    id: "upwork",
+    link: "https://www.upwork.com/freelancers/~012acc92512136e837",
+    imgLink: "https://www.upwork.com/favicon.ico",
+    about: "Upwork Profile",
+  },
+]

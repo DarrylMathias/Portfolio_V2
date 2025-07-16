@@ -120,14 +120,21 @@ const Hero = () => {
                 <AuroraText>Digital Interfaces</AuroraText>
               </div>
 
-              <p className="text-center md:tracking-wider my-6 text-lg md:text-xl lg:text-2xl">
+              <p className="text-center md:tracking-wider mt-6 mb-2 text-lg md:text-xl lg:text-2xl">
                 Hi! I&apos;m{" "}
                 <span className="text-violet-400">Darryl Mathias</span>, a
-                <FlipWords words={words} />@ Sophomore, TSEC CE.
+                <FlipWords words={words} />
+                <span className="my-1 font-semibold tracking-wide text-white/90">
+                  - Builder @{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-bold">
+                    Heart
+                  </span>
+                </span>
+                , TSEC CE.
               </p>
 
               {/* Button */}
-                <ConfirmSpark />
+              <ConfirmSpark />
             </div>
           </div>
         </div>

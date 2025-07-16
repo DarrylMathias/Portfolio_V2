@@ -1,10 +1,10 @@
 "use server";
 
-import { socialMedia } from "@/data";
+import { socialMedia, freelanceProfiles } from "@/data";
 import FeedbackForm from "./FeedbackForm";
 import Views from "./Views";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 
 export default async function Footer() {
   return (
@@ -95,7 +95,7 @@ export default async function Footer() {
         <div className="flex items-center gap-4">
           {socialMedia.map((info) => (
             <Link
-              aria-label = {info.about}
+              aria-label={info.about}
               key={info.id}
               href={info.link}
               target="_blank"
@@ -112,7 +112,29 @@ export default async function Footer() {
             </Link>
           ))}
         </div>
+        {/* Freelance Profiles Section */}
+        <div className="flex items-center gap-4">
+          {freelanceProfiles.map((info) => (
+            <Link
+              aria-label={info.about}
+              key={info.id}
+              href={info.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 flex justify-center items-center backdrop-blur-md bg-black/40 rounded-lg border border-black/20 transition-transform hover:scale-105"
+            >
+              <img
+                src={info.imgLink}
+                alt={`${info.id}-icon`}
+                width={24}
+                height={24}
+                loading="lazy"
+              />
+            </Link>
+          ))}
+        </div>
       </div>
+
       <p className="text-sm text-muted-foreground px-6 md:px-10 py-5">
         We collect your IP address to determine approximate location for
         analytics. This data is processed securely and never shared beyond
