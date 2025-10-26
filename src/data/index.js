@@ -58,7 +58,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a Social Media App",
+    title: "Currently building an Agentic AI Assistant",
     description: "The Insider 🤫",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -158,6 +158,20 @@ export const skills = [
     "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
+    "id": 20,
+    "name": "Docker",
+    "image": "/docker.svg",
+    "description": "The core platform for building, shipping, and running applications in containers across any environment.",
+    "link": "https://docs.docker.com/"
+  },
+  {
+    "id": 21,
+    "name": "LangChain",
+    "image": "/langchain.svg",
+    "description": "A powerful framework for developing apps powered by LLMs, enabling agentic systems with ease.",
+    "link": "https://docs.langchain.com/"
+  },
+  {
     "id": 5,
     "name": "Tailwind CSS",
     "image": "/tail.svg",
@@ -228,6 +242,13 @@ export const skills = [
     "link": "https://www.mongodb.com/"
   },
   {
+    "id": 23,
+    "name": "PostgreSQL",
+    "image": "/postgresql.svg",
+    "description": "A powerful, open-source relational database system.",
+    "link": "https://www.postgresql.org/docs/"
+  },
+  {
     "id": 15,
     "name": "Firebase",
     "image": "/firebase.svg",
@@ -261,7 +282,14 @@ export const skills = [
     "image": "/java.svg",
     "description": "An object-oriented language heavily used in Android apps and enterprise systems.",
     "link": "https://docs.oracle.com/en/java/"
-  }
+  },
+  {
+    "id": 22,
+    "name": "Rust",
+    "image": "/rust.svg",
+    "description": "A modern systems programming language focused on performance and memory safety.",
+    "link": "https://doc.rust-lang.org/"
+  },
 ];
 
 
@@ -300,38 +328,38 @@ export const socialMedia = [
   {
     id: 1,
     img: "/linkedin.svg",
-    link : 'https://www.linkedin.com/in/darryl-mathias-020241317/',
-    about : 'Darryl Mathias Linkedin'
+    link: 'https://www.linkedin.com/in/darryl-mathias-020241317/',
+    about: 'Darryl Mathias Linkedin'
   },
   {
     id: 2,
     img: "/git.svg",
-    link : 'https://github.com/DarrylMathias',
-    about : 'Darryl Mathias Github'
+    link: 'https://github.com/DarrylMathias',
+    about: 'Darryl Mathias Github'
   },
   {
     id: 3,
     img: "/gmail.svg",
-    link : 'mailto:darrylnevmat@gmail.com',
-    about : 'Darryl Mathias Gmail'
+    link: 'mailto:darrylnevmat@gmail.com',
+    about: 'Darryl Mathias Gmail'
   },
   {
     id: 4,
-    img : '/quora.svg',
-    link : 'https://www.quora.com/profile/Darryl-Mathias-5',
-    about : 'Darryl Mathias Quora'
+    img: '/quora.svg',
+    link: 'https://www.quora.com/profile/Darryl-Mathias-5',
+    about: 'Darryl Mathias Quora'
   },
   {
     id: 5,
-    img : '/yt.svg',
-    link : 'https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng',
-    about : 'Darryl Mathias Youtube'
+    img: '/yt.svg',
+    link: 'https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng',
+    about: 'Darryl Mathias Youtube'
   },
   {
     id: 6,
-    img : '/reddit.svg',
-    link : 'https://www.reddit.com/user/Spiritual-Banana1048/',
-    about : 'Darryl Mathias Reddit'
+    img: '/reddit.svg',
+    link: 'https://www.reddit.com/user/Spiritual-Banana1048/',
+    about: 'Darryl Mathias Reddit'
   }
 ];
 
