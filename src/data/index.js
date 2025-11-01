@@ -243,10 +243,10 @@ export const skills = [
   },
   {
     "id": 23,
-    "name": "PostgreSQL",
-    "image": "/postgresql.svg",
-    "description": "A powerful, open-source relational database system.",
-    "link": "https://www.postgresql.org/docs/"
+    "name": "Prisma",
+    "image": "/prisma.svg",
+    "description": "A modern, open-source ORM that provides a type-safe way to interact with databases in TypeScript applications.",
+    "link": "https://www.prisma.io/docs"
   },
   {
     "id": 15,
@@ -283,13 +283,13 @@ export const skills = [
     "description": "An object-oriented language heavily used in Android apps and enterprise systems.",
     "link": "https://docs.oracle.com/en/java/"
   },
-  {
-    "id": 22,
-    "name": "Rust",
-    "image": "/rust.svg",
-    "description": "A modern systems programming language focused on performance and memory safety.",
-    "link": "https://doc.rust-lang.org/"
-  },
+  // {
+  //   "id": 22,
+  //   "name": "Rust",
+  //   "image": "/rust.svg",
+  //   "description": "A modern systems programming language focused on performance and memory safety.",
+  //   "link": "https://doc.rust-lang.org/"
+  // },
 ];
 
 
