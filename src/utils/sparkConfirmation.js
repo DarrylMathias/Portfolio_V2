@@ -1,23 +1,16 @@
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
+import { configDotenv } from 'dotenv';
+import { Resend } from 'resend';
 
-dotenv.config();
+configDotenv()
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function sparkConfirmation(name, email, id) {
-    try {
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.APP_PASSWORD,
-            },
-        });
-
-        const mailOptions = {
-            from: `${process.env.EMAIL_USER}`,
-            to: email,
-            subject: `Welcome to Daily Spark - Please confirm your subscription`,
-            html: `<!DOCTYPE html>
+    const { data, error } = await resend.emails.send({
+        from: 'Darryl <help@darrylmathias.tech>',
+        to: email,
+        subject: `Welcome to Daily Spark - Please confirm your subscription`,
+        html: `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -220,13 +213,13 @@ export default async function sparkConfirmation(name, email, id) {
     </div>
 </body>
 </html>`,
-        };
+    });
 
-        const info = await transporter.sendMail(mailOptions);
-        console.log('✅ Email sent successfully:', info.response);
-        return info;
-    } catch (err) {
-        console.error("❌ Failed to generate AI response or send email:", err);
+    if (error) {
+        console.log(error);
     }
-}
+
+    console.log(data);
+};
+
 
