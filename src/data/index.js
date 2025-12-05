@@ -86,6 +86,21 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
+    title: "Neura",
+    des: "Neura – a proactive AI navigation assistant combining real-time mapping with conversational intelligence.",
+    img: "/neura.png",
+    iconLists: [
+      "/next.svg",
+      "/neon.svg",
+      "/prisma.svg",
+      "/ts.svg",
+      "/supermemory.png"
+    ],
+    link: "https://neura.darrylmathias.tech",
+    floatingTitle: "www.neura.app",
+  },
+  {
+    id: 2,
     title: "Write It",
     des: "Discover Write It — a sleek, modern platform crafted for writers and readers who value meaningful stories.",
     img: "/writeit.png",
@@ -100,22 +115,13 @@ export const projects = [
     floatingTitle: "www.writeit.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "Byteguide",
     des: "ByteGuide is a recipe website designed to help users explore and prepare dishes effortlessly.",
     img: "/byteguide.png",
     iconLists: ["/html.svg", "/tail.svg", "/js.svg"],
     link: "https://darrylmathias.github.io/ByteGuide/",
     floatingTitle: "www.byteguide.app",
-  },
-  {
-    id: 3,
-    title: "UpdateMe",
-    des: "Stay informed with UpdateMe — a dynamic news platform delivering fresh headlines and immersive 3D animations.",
-    img: "/updateMe.png",
-    iconLists: ["/re.svg", "/tail.svg", "/shadcn-ui.svg", "/accertinity.png"],
-    link: "https://updateme-seven.vercel.app/",
-    floatingTitle: "www.updateme.app",
   },
   {
     id: 4,
