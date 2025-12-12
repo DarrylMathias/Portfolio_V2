@@ -52,10 +52,10 @@ importers:
         version: 3.8.1
       '@vercel/analytics':
         specifier: ^1.5.0
-        version: 1.5.0(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 1.5.0(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@vercel/speed-insights':
         specifier: ^1.2.0
-        version: 1.2.0(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 1.2.0(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       axios:
         specifier: ^1.9.0
         version: 1.10.0
@@ -84,14 +84,14 @@ importers:
         specifier: ^8.15.2
         version: 8.16.0
       next:
-        specifier: ^15.6.0-canary.58
-        version: 15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.6.0-canary.60
+        version: 15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-seo:
         specifier: ^6.8.0
-        version: 6.8.0(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.8.0(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 4.2.3(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -456,8 +456,8 @@ packages:
   '@next/env@13.5.11':
     resolution: {integrity: sha512-fbb2C7HChgM7CemdCY+y3N1n8pcTKdqtQLbC7/EQtPdLvlMUT9JX/dBYl8MMZAtYG4uVMyPFHXckb68q/NRwqg==}
 
-  '@next/env@15.6.0-canary.58':
-    resolution: {integrity: sha512-JyYhiCaCYgLfs3a195cncgUfyATTvtIpK2L9wpka4JdJ/Cn58LxO2WRQysmWYXWjuCTgE9n4vjWDAJcWmRisiw==}
+  '@next/env@15.6.0-canary.60':
+    resolution: {integrity: sha512-VVoy8NpkI2ngEr3RsD8jzum8SbXisObkvcCMBJeiWRSMOtACIm6kbnTYjgLWeGEwHHKsVBdeJpnf558rF6ktbw==}
 
   '@next/eslint-plugin-next@15.3.4':
     resolution: {integrity: sha512-lBxYdj7TI8phbJcLSAqDt57nIcobEign5NYIKCiy0hXQhrUbTqLqOaSDi568U6vFg4hJfBdZYsG4iP/uKhCqgg==}
@@ -2580,8 +2580,8 @@ packages:
       react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
       react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
-  next@15.6.0-canary.58:
-    resolution: {integrity: sha512-crPQo+AxBCmmBFMpDLbFg1uH+ArvrPNkvsviM60wrlzmhNuQyIOQ0tHL7Y10BVlxqtM7esMDQnepKT1XJBqYBQ==}
+  next@15.6.0-canary.60:
+    resolution: {integrity: sha512-E5gKHda+vdACO+/Bv53V3qcMrhmhH8UuctFSbNeCvnIfPoWPEUMHCB+hok7qxRlKwclXoQ5SUgUdgi6Ayzu5uA==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
@@ -3610,7 +3610,7 @@ snapshots:
 
   '@next/env@13.5.11': {}
 
-  '@next/env@15.6.0-canary.58': {}
+  '@next/env@15.6.0-canary.60': {}
 
   '@next/eslint-plugin-next@15.3.4':
     dependencies:
@@ -4485,14 +4485,14 @@ snapshots:
       '@use-gesture/core': 10.3.1
       react: 18.3.1
 
-  '@vercel/analytics@1.5.0(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@vercel/analytics@1.5.0(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     optionalDependencies:
-      next: 15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
 
-  '@vercel/speed-insights@1.2.0(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@vercel/speed-insights@1.2.0(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     optionalDependencies:
-      next: 15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
 
   '@webgpu/types@0.1.61': {}
@@ -5818,28 +5818,28 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next-seo@6.8.0(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next-seo@6.8.0(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      next: 15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  next-sitemap@4.2.3(next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  next-sitemap@4.2.3(next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@corex/deepmerge': 4.0.43
       '@next/env': 13.5.11
       fast-glob: 3.3.3
       minimist: 1.2.8
-      next: 15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   next-themes@0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  next@15.6.0-canary.58(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next@15.6.0-canary.60(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@next/env': 15.6.0-canary.58
+      '@next/env': 15.6.0-canary.60
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001726
       postcss: 8.4.31
