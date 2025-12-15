@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ShimmerButton } from "./magicui/shimmer-button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { fetchForm } from "@/app/actions/form";
 import { fetchFormAI } from "@/app/actions/formAI";
@@ -15,6 +15,8 @@ export default function FeedbackForm() {
     name: "",
     email: "",
     message: "",
+    company: "",
+    ts: Date.now(),
   });
 
   const [isBlocked, setBlocked] = useState(false);
@@ -26,30 +28,31 @@ export default function FeedbackForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const submitter = e.nativeEvent.submitter;
-    let res
+    let res;
     try {
+      const payload = { ...data, ts: Date.now() };
+
       await toast.promise(
         async () => {
           setBlocked(true);
           if (submitter?.name === "send") {
-            console.log("Send Message clicked");
-            res = await fetchForm(data)
+            res = await fetchForm(payload);
           } else if (submitter?.name === "ai") {
-            console.log("AI Reply clicked");
-            res = await fetchFormAI(data)
+            res = await fetchFormAI(payload);
           }
-          if (!res?.success) throw new Error(res.error || "Something went wrong");
+
+          if (!res?.success)
+            throw new Error(res.error || "Something went wrong");
         },
         {
           loading: "Loading...",
-          success:
-            "Message sent successfully! We'll reach back in a short time",
-          error: (err) => (err ? err.message : "Unknown error occured"),
+          success: "Message sent successfully! We'll reach back shortly",
+          error: (err) => (err ? err.message : "Unknown error occurred"),
         }
       );
     } catch (error) {
-      console.log(`Signup error ${error}`);
-      toast.error(`Signup error ${error.message}`);
+      console.log(`Form error: ${error}`);
+      toast.error(`Form error: ${error.message}`);
     } finally {
       setBlocked(false);
     }
@@ -74,7 +77,7 @@ export default function FeedbackForm() {
               </Label>
               <Input
                 id="name"
-                placeholder="John Doe"
+                placeholder="Challenge accepted, Doe John!"
                 name="name"
                 value={data.name}
                 onChange={handleChange}
@@ -117,9 +120,17 @@ export default function FeedbackForm() {
                 onChange={handleChange}
                 className="min-h-[120px] bg-gray-50 dark:bg-gray-800 dark:text-white border dark:border-gray-600"
                 required
-                minLength={10}
+                minLength={20}
               />
             </div>
+            {/* Honeypot field */}
+            <Input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+            />
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button
@@ -138,7 +149,7 @@ export default function FeedbackForm() {
                 type="submit"
                 name="ai"
               >
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-md">
                   Let AI reply
                 </span>
               </ShimmerButton>

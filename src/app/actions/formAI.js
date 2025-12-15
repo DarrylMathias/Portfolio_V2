@@ -5,23 +5,48 @@ import feedbackModel from "@/models/feedback";
 import aiMailer from "@/utils/aiResponse";
 import aiMessageInfo from "@/utils/aiMessageInfo";
 import z from 'zod'
+import { isManualSpam } from "@/utils/manualSpam";
+import { headers } from "next/headers";
+import { checkRateLimit } from "@/utils/rateLimiter";
 
-// We create functions like these for treating each case of a route (like POST signup, GET signup)
 export async function fetchFormAI(formData) {
     try {
-        await connect(); // => Just connect
+        const h = await headers();
+        const ip =
+            h.get("x-forwarded-for")?.split(",")[0] ||
+            h.get("x-real-ip") ||
+            "unknown";
+
+        if (!checkRateLimit(ip)) {
+            return { success: false, error: "Too many submissions from your IP. Please wait." };
+        }
+        const MAX_AGE = 30 * 1000;
+        if (!formData.ts || Date.now() - formData.ts > MAX_AGE) {
+            return { success: false, error: "Form expired. Please resubmit." };
+        }
+
+        if (formData.company) return { success: true }; // honeypot
+
+        await connect();
+
         const FeedbackForm = z.object({
-            name: z.string(),
+            name: z.string().min(2).max(50),
             email: z.string().email(),
-            message: z.string()
+            message: z.string().min(50).max(1500),
+            ts: z.number(),
         });
         const { name, email, message } = FeedbackForm.parse(formData);
+
+        if (isManualSpam({ name, email, message })) {
+            return { success: false, error: "Low‑quality submission detected." };
+        }
+
         const aiReply = await aiMailer(message, email);
         await feedbackModel.create({ name, email, message, aiReply });
         await aiMessageInfo(name, message, aiReply);
-         return { success: true };
+        return { success: true };
     } catch (error) {
         console.log(`Error in feedback ${error}`);
-        return { success: false, error: error.message };
+        return { success: false, error: error.message || error[0].message };
     }
 }
