@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Notify Svix of new push
         run : |
+          curl -X POST "https://api.eu.svix.com/api/v1/app/portfolio-consumer/msg/" \
+          -H  "Accept: application/json" \
+          -H  "Content-Type: application/json" \
+          -H  "Authorization: Bearer ${{ secrets.SVIX_API_KEY }}" \
+          -d '{"eventType": "github.push", "eventId": "${{ github.sha }}", "payload": {"type": "github.push", "branch": "main", "commit": "${{ github.sha }}" }}'
         
