@@ -3,7 +3,6 @@ const nextConfig = {
   experimental: {
     ppr: 'incremental',
     optimizeCss: false,
-    turbo: false,
   },
 };
 
