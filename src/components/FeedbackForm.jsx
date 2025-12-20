@@ -77,7 +77,7 @@ export default function FeedbackForm() {
               </Label>
               <Input
                 id="name"
-                placeholder="Challenge accepted, Doe John!"
+                placeholder="Doe John!"
                 name="name"
                 value={data.name}
                 onChange={handleChange}
