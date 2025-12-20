@@ -16,5 +16,5 @@ jobs:
           -H  "Accept: application/json" \
           -H  "Content-Type: application/json" \
           -H  "Authorization: Bearer ${{ secrets.SVIX_API_KEY }}" \
-          -d '{"eventType": "github.push", "eventId": "${{ github.sha }}", "payload": {"type": "github.push", "branch": "main", "commit": "${{ github.sha }}" }}'
+          -d '{"eventType": "github.push", "eventId": "${{ github.sha }}", "payload": {"type": "github.push", "branch": "${{ github.ref_name }}", "commit": "${{ github.sha }}" }}'
         
