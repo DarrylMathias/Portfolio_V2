@@ -351,18 +351,24 @@ export const socialMedia = [
   },
   {
     id: 4,
+    img: "/medium.svg",
+    link: 'https://medium.com/@mathiasndarryl7',
+    about: 'Darryl Mathias Medium'
+  },
+  {
+    id: 5,
     img: '/quora.svg',
     link: 'https://www.quora.com/profile/Darryl-Mathias-5',
     about: 'Darryl Mathias Quora'
   },
   {
-    id: 5,
+    id: 6,
     img: '/yt.svg',
     link: 'https://www.youtube.com/channel/UCIgATHMupDeW4f-Q48ufrng',
     about: 'Darryl Mathias Youtube'
   },
   {
-    id: 6,
+    id: 7,
     img: '/reddit.svg',
     link: 'https://www.reddit.com/user/Spiritual-Banana1048/',
     about: 'Darryl Mathias Reddit'

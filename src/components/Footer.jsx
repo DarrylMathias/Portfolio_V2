@@ -103,6 +103,7 @@ export default async function Footer() {
               className="w-10 h-10 flex justify-center items-center backdrop-blur-md bg-black/40 rounded-lg border border-black/20 transition-transform hover:scale-105"
             >
               <Image
+                className={info.id === 4 ? "invert brightness-0" : ""}
                 src={info.img}
                 alt={`${info.id}-icon`}
                 width={24}
