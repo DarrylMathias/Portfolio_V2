@@ -4,6 +4,7 @@ import * as React from "react";
 import { projects } from "@/data";
 import dynamic from "next/dynamic";
 import CardSkeleton from "@/components/ui/Skeleton/CardSkeleton";
+import SelfHostedCard from "./ui/SelfHostedCard";
 const PinContainer = dynamic(
   () => import("@/components/ui/3d-pin").then((mod) => mod.PinContainer),
   { ssr: false, loading: () => <CardSkeleton /> }
@@ -20,6 +21,7 @@ const RecentProjects = () => {
         A small selection of{" "}
         <span className="text-purple-300">recent projects</span>
       </h1>
+      <SelfHostedCard/>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-32 gap-y-18 mt-10">
         {projects.map((item) => (
           <Link

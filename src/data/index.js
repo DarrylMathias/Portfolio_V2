@@ -82,6 +82,19 @@ export const gridItems = [
   },
 ];
 
+export const featuredProject = {
+  id: "android-server",
+  title: "The Android Server",
+  description:
+    "A production-grade web server running on a retired Android phone, built with Termux and Cloudflare Tunnels to power this portfolio with real-world uptime and zero cloud compute.",
+  mainLink: "https://self-hosted.darrylmathias.tech",
+  mediumLink:
+    "https://medium.com/@mathiasndarryl7/part-0-android-the-os-is-the-enemy-fcf6d4ea05ac",
+  statusLink: "https://stats.uptimerobot.com/dGeYNfFczd",
+  img: "/Portfolio.png",
+  tech: ["/next.svg", "/cloudflare.svg", "/linux.svg", "/termux.svg"],
+};
+
 
 export const projects = [
   {
