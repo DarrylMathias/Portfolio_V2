@@ -177,6 +177,13 @@ export const skills = [
     "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
+    "id": 24,
+    "name": "Vue.js",
+    "image": "/vue.svg",
+    "description": "A JavaScript framework for building reactive user interfaces using component-based architecture.",
+    "link": "https://vuejs.org/"
+  },
+  {
     "id": 20,
     "name": "Docker",
     "image": "/docker.svg",
