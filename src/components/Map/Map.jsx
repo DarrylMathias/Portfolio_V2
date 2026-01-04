@@ -82,7 +82,7 @@ export default function Map(props) {
           <Marker key={i} position={[coord.lat, coord.lon]}>
             {coord.city && coord.country && (
               <Popup>
-                  `${coord.city}, ${coord.country}`
+                  {coord.city}, {coord.country}
               </Popup>
             )}
           </Marker>
