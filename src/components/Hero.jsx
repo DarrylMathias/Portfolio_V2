@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import NavbarSkeleton from "./ui/Skeleton/NavbarSkeleton";
 import axios from "axios";
 import { ConfirmSpark } from "@/components/ui/ConfirmSpark";
+import Link from "next/link";
 const Spotlight = dynamic(
   () => import("./ui/Spotlight").then((mod) => mod.Spotlight),
   { ssr: false }
@@ -125,12 +126,12 @@ const Hero = () => {
                 <span className="text-violet-400">Darryl Mathias</span>, a
                 <FlipWords words={words} />
                 <span className="my-1 font-semibold tracking-wide text-white/90">
-                  - Builder @{" "}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-bold">
-                    Heart
-                  </span>
+                  - Intern @{" "}
+                  <Link className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-bold" href='https://sarasfinance.com/' target="__blank">
+                    Saras Finance
+                  </Link>
                 </span>
-                , TSEC CE.
+                {/* , TSEC CE. */}
               </p>
 
               {/* Button */}

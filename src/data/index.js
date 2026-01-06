@@ -58,7 +58,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a self-hosted CI server",
+    title: "Currently building a solution to manage network ports",
     description: "The Insider 🤫",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -329,7 +329,7 @@ export const workExperience = [
   },
   // {
   //   id: 2,
-  //   title: "Mobile App Dev - JSM Tech",
+  //   title: "Software Developer Intern - Saras Finance",
   //   desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
   //   className: "md:col-span-2", // change to md:col-span-2
   //   thumbnail: "/exp2.svg",
