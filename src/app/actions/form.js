@@ -40,7 +40,7 @@ export async function fetchForm(formData) {
             return { success: false, error: "Low‑quality submission detected." };
         }
         await feedbackModel.create({ name, email, message });
-        sendInfoMail(name, message, email);
+        await sendInfoMail(name, message, email);
         return { success: true };
     } catch (error) {
         console.log(`Error in feedback ${error}`);
