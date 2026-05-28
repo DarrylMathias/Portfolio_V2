@@ -32,7 +32,7 @@ export async function fetchFormAI(formData) {
         const FeedbackForm = z.object({
             name: z.string().min(2).max(50),
             email: z.string().email(),
-            message: z.string().min(50).max(1500),
+            message: z.string().min(20).max(1500),
             ts: z.number(),
         });
         const { name, email, message } = FeedbackForm.parse(formData);

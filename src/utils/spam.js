@@ -12,6 +12,9 @@ export const FAKE_NAMES = [
   "null",
   "undefined",
   "none",
+  "hello",
+  "hi",
+  "hey"
 ];
 
 export const FAKE_EMAIL_DOMAINS = [
@@ -25,6 +28,7 @@ export const FAKE_EMAIL_DOMAINS = [
   "fake.com",
   "invalid.com",
   "localhost",
+  "[IP_ADDRESS]"
 ];
 
 export const PROBE_MESSAGES = [
@@ -36,4 +40,8 @@ export const PROBE_MESSAGES = [
   "1234",
   "12345",
   "ping",
+  "hello",
+  "hi",
+  "hey",
+  "how are you?"
 ];

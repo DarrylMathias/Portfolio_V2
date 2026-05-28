@@ -52,7 +52,6 @@ export default function FeedbackForm() {
       );
     } catch (error) {
       console.log(`Form error: ${error}`);
-      toast.error(`Form error: ${error.message}`);
     } finally {
       setBlocked(false);
     }
@@ -83,6 +82,8 @@ export default function FeedbackForm() {
                 onChange={handleChange}
                 className="bg-gray-50 dark:bg-gray-800 dark:text-white border dark:border-gray-600"
                 required
+                minLength={2}
+                maxLength={50}
               />
             </div>
 
@@ -102,6 +103,7 @@ export default function FeedbackForm() {
                 onChange={handleChange}
                 className="bg-gray-50 dark:bg-gray-800 dark:text-white border dark:border-gray-600"
                 required
+                maxLength={100}
               />
             </div>
 
@@ -121,6 +123,7 @@ export default function FeedbackForm() {
                 className="min-h-[120px] bg-gray-50 dark:bg-gray-800 dark:text-white border dark:border-gray-600"
                 required
                 minLength={20}
+                maxLength={1500}
               />
             </div>
             {/* Honeypot field */}

@@ -3,22 +3,17 @@ import { Resend } from 'resend';
 
 configDotenv()
 
+import React from 'react';
+import AiMessageInfoEmail from '../emails/AiMessageInfoEmail.jsx';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function aiMessageInfo(name, message, reply) {
     const { data, error } = await resend.emails.send({
         from: 'Darryl <help@darrylmathias.tech>',
-        to: ['darrylnevmat@gmail.com'],
+        to: process.env.EMAIL_USER,
         subject: "Gemini's response to query",
-        html: `
-            <div style="font-family: Arial, sans-serif; font-size: 14px; color: #333;">
-                <p><strong>Name:</strong><br>${name}</p>
-                <br>
-                <p><strong>Query:</strong><br>${message.replace(/\n/g, '<br>')}</p>
-                <br>
-                <p><strong>Response:</strong><br>${reply.replace(/\n/g, '<br>')}</p>
-            </div>
-        `
+        react: React.createElement(AiMessageInfoEmail, { name, message, reply }),
     });
 
     if (error) {
