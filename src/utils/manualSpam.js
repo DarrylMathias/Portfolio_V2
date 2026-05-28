@@ -18,5 +18,3 @@ export function isManualSpam({ name, email, message }) {
 
   return false;
 }
-
-
