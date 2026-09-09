@@ -81,7 +81,7 @@ export function NavbarDemo({ isRoute }) {
             <NavbarButton variant="secondary">
               <Link
                 href="/Darryl_Mathias_Resume_Latest.pdf"
-                download="Darryl_Mathias"
+                target="_blank"
               >
                 Resume
               </Link>
@@ -131,7 +131,9 @@ export function NavbarDemo({ isRoute }) {
                 variant="primary"
                 className="w-full"
               >
-                Resume
+                <Link href="/Darryl_Mathias_Resume_Latest.pdf" target="_blank">
+                  Resume
+                </Link>
               </NavbarButton>
             </div>
           </MobileNavMenu>
