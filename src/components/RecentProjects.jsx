@@ -23,11 +23,12 @@ const RecentProjects = () => {
       </h1>
       <SelfHostedCard/>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-32 gap-y-18 mt-10">
-        {projects.map((item) => (
+        {projects.map((item, index) => (
           <Link
             href={item.link}
             target="_blank"
             key={item.id}
+            className={index >= 2 ? "hidden lg:contents" : ""}
           >
             <div className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]">
               <PinContainer

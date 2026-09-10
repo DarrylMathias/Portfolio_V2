@@ -44,7 +44,7 @@ const Experience = () => {
                 {Array.isArray(card.desc) ? (
                   <ul className="text-start text-base md:text-lg text-white-100 mt-3 font-normal list-disc list-outside ml-5 space-y-2">
                     {card.desc.map((item, idx) => (
-                      <li key={idx}>{item}</li>
+                      <li key={idx} className={idx >= 2 ? "hidden lg:list-item" : ""}>{item}</li>
                     ))}
                   </ul>
                 ) : (
