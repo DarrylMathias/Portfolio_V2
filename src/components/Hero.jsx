@@ -126,7 +126,7 @@ const Hero = () => {
                 <span className="text-violet-400">Darryl Mathias</span>, a
                 <FlipWords words={words} />
                 <span className="my-1 font-semibold tracking-wide text-white/90">
-                  - Intern @{" "}
+                  - Ex Intern @{" "}
                   <Link className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-bold" href='https://sarasfinance.com/' target="__blank">
                     Saras Finance
                   </Link>
@@ -135,7 +135,7 @@ const Hero = () => {
               </p>
 
               {/* Button */}
-              <ConfirmSpark />
+              {/* <ConfirmSpark /> */}
             </div>
           </div>
         </div>

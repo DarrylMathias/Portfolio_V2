@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Experience = () => {
   return (
-    <div className="pt-10 pb-30 w-full px-10 sm:px-30 lg:px-50">
+    <div id="experience" className="pt-10 pb-30 w-full px-10 sm:px-30 lg:px-50">
       <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-6xl text-center mt-7 mb-2">
         My <span className="text-purple-300">work experience</span>
       </h1>
@@ -32,18 +32,26 @@ const Experience = () => {
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2 ">
               <Image
                 src={card.thumbnail}
-                alt={card.thumbnail}
-                className="lg:w-32 md:w-20 w-16"
-                height={30}
-                width={32}
+                alt={card.title}
+                className="lg:w-32 lg:h-32 md:w-20 md:h-20 w-16 h-16 object-contain flex-shrink-0 bg-white p-2 rounded-2xl"
+                height={128}
+                width={128}
               />
               <div className="lg:ms-5">
                 <h1 className="text-start text-xl md:text-3xl font-bold">
                   {card.title}
                 </h1>
-                <p className="text-start text-lg md:text-xl text-white-100 mt-3 font-semibold">
-                  {card.desc}
-                </p>
+                {Array.isArray(card.desc) ? (
+                  <ul className="text-start text-base md:text-lg text-white-100 mt-3 font-normal list-disc list-outside ml-5 space-y-2">
+                    {card.desc.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-start text-base md:text-lg text-white-100 mt-3 font-semibold">
+                    {card.desc}
+                  </p>
+                )}
               </div>
             </div>
           </Button>

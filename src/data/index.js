@@ -1,6 +1,7 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
+  { name: "Experience", link: "#experience" },
   { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
@@ -58,7 +59,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a solution to manage network ports",
+    title: "Just shipped a search engine from scratch in Golang",
     description: "The Insider 🤫",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -99,6 +100,20 @@ export const featuredProject = {
 export const projects = [
   {
     id: 1,
+    title: "Yoink",
+    des: "Yoink – a distributed search engine indexing 1M+ web pages in Go with a custom crawler, indexer and BM25 ranking engine.",
+    img: "/yoink.png",
+    iconLists: [
+      "/go.png",
+      "/postgresql.svg",
+      "/aws.svg",
+      "/redis.svg",
+    ],
+    link: "https://github.com/DarrylMathias/yoink",
+    floatingTitle: "www.yoink.app",
+  },
+  {
+    id: 2,
     title: "Neura",
     des: "Neura – a proactive AI navigation assistant combining real-time mapping with conversational intelligence.",
     img: "/neura.png",
@@ -113,7 +128,7 @@ export const projects = [
     floatingTitle: "www.neura.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "Write It",
     des: "Discover Write It — a sleek, modern platform crafted for writers and readers who value meaningful stories.",
     img: "/writeit.png",
@@ -128,7 +143,7 @@ export const projects = [
     floatingTitle: "www.writeit.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "Byteguide",
     des: "ByteGuide is a recipe website designed to help users explore and prepare dishes effortlessly.",
     img: "/byteguide.png",
@@ -137,7 +152,7 @@ export const projects = [
     floatingTitle: "www.byteguide.app",
   },
   {
-    id: 4,
+    id: 5,
     title: "Ultimate Tic Tac Toe",
     des: "Ultimate Tic Tac Toe — a strategic twist on the classic, powered by advanced algorithms for an unbeatable AI opponent.",
     img: "/tictactoe.png",
@@ -149,198 +164,234 @@ export const projects = [
 
 export const skills = [
   {
-    "id": 1,
-    "name": "Next.js",
-    "image": "/next.svg",
-    "description": "A powerful React framework with SSR, SSG, API routes, and great developer experience.",
-    "link": "https://nextjs.org/"
+    id: 1,
+    name: "Go",
+    image: "/go.png",
+    description: "An open-source programming language by Google that makes it easy to build simple and concurrent software.",
+    link: "https://go.dev/"
   },
   {
-    "id": 2,
-    "name": "React.js",
-    "image": "/re.svg",
-    "description": "A JavaScript library for building dynamic user interfaces with component-based architecture.",
-    "link": "https://react.dev/"
+    id: 2,
+    name: "TypeScript",
+    image: "/ts.svg",
+    description: "A statically typed superset of JavaScript that improves reliability and developer productivity.",
+    link: "https://www.typescriptlang.org/"
   },
   {
-    "id": 3,
-    "name": "TypeScript",
-    "image": "/ts.svg",
-    "description": "A statically typed superset of JavaScript that improves reliability and developer productivity.",
-    "link": "https://www.typescriptlang.org/"
+    id: 3,
+    name: "JavaScript",
+    image: "/js.svg",
+    description: "The core language of the web used for interactivity and full-stack development.",
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
-    "id": 4,
-    "name": "JavaScript",
-    "image": "/js.svg",
-    "description": "The core language of the web used for interactivity and full-stack development.",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    id: 4,
+    name: "Next.js",
+    image: "/next.svg",
+    description: "A powerful React framework with SSR, SSG, API routes, and great developer experience.",
+    link: "https://nextjs.org/"
   },
   {
-    "id": 24,
-    "name": "Vue.js",
-    "image": "/vue.svg",
-    "description": "A JavaScript framework for building reactive user interfaces using component-based architecture.",
-    "link": "https://vuejs.org/"
+    id: 5,
+    name: "React.js",
+    image: "/re.svg",
+    description: "A JavaScript library for building dynamic user interfaces with component-based architecture.",
+    link: "https://react.dev/"
   },
   {
-    "id": 20,
-    "name": "Docker",
-    "image": "/docker.svg",
-    "description": "The core platform for building, shipping, and running applications in containers across any environment.",
-    "link": "https://docs.docker.com/"
+    id: 6,
+    name: "Echo",
+    image: "/echo.svg",
+    description: "High performance, extensible, minimalist Go web framework.",
+    link: "https://echo.labstack.com/"
   },
   {
-    "id": 21,
-    "name": "LangChain",
-    "image": "/langchain.svg",
-    "description": "A powerful framework for developing apps powered by LLMs, enabling agentic systems with ease.",
-    "link": "https://docs.langchain.com/"
+    id: 7,
+    name: "GORM",
+    image: "/gorm.svg",
+    description: "The fantastic ORM library for Golang.",
+    link: "https://gorm.io/"
   },
   {
-    "id": 5,
-    "name": "Tailwind CSS",
-    "image": "/tail.svg",
-    "description": "A utility-first CSS framework for rapidly building custom designs with ease.",
-    "link": "https://tailwindcss.com/"
+    id: 8,
+    name: "Node.js",
+    image: "/nodejs.svg",
+    description: "A runtime that allows building scalable backend services with JavaScript.",
+    link: "https://nodejs.org/en/"
   },
   {
-    "id": 6,
-    "name": "HTML",
-    "image": "/html.svg",
-    "description": "The foundation of web content, used to structure elements on the page.",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    id: 9,
+    name: "Express",
+    image: "/express.svg",
+    description: "A fast, minimalist framework for Node.js used for building APIs and backend logic.",
+    link: "https://expressjs.com/"
   },
   {
-    "id": 7,
-    "name": "CSS",
-    "image": "/css.svg",
-    "description": "Used to style and visually design web applications responsively and beautifully.",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    id: 10,
+    name: "PostgreSQL",
+    image: "/postgresql.svg",
+    description: "A powerful, open source object-relational database system.",
+    link: "https://www.postgresql.org/"
   },
   {
-    "id": 8,
-    "name": "Shadcn UI",
-    "image": "/shadcn-ui.svg",
-    "description": "A modern component library built with Radix UI and Tailwind CSS, focused on accessibility.",
-    "link": "https://ui.shadcn.com/"
+    id: 11,
+    name: "Prisma",
+    image: "/prisma.svg",
+    description: "A modern, open-source ORM that provides a type-safe way to interact with databases in TypeScript applications.",
+    link: "https://www.prisma.io/docs"
   },
   {
-    "id": 9,
-    "name": "Bootstrap",
-    "image": "/bootstrap.svg",
-    "description": "A popular CSS framework with ready-made responsive UI components and grid system.",
-    "link": "https://getbootstrap.com/"
+    id: 12,
+    name: "MongoDB",
+    image: "/mongodb.svg",
+    description: "A document-based NoSQL database ideal for flexible, scalable web apps.",
+    link: "https://www.mongodb.com/"
   },
   {
-    "id": 10,
-    "name": "Chakra UI",
-    "image": "/chakra.svg",
-    "description": "A modular, accessible React component library that offers flexibility and style props.",
-    "link": "https://chakra-ui.com/"
+    id: 13,
+    name: "Firebase",
+    image: "/firebase.svg",
+    description: "A BaaS platform offering authentication, hosting, and NoSQL database services.",
+    link: "https://firebase.google.com/"
   },
   {
-    "id": 11,
-    "name": "GSAP",
-    "image": "/gsap.svg",
-    "description": "A performant animation library for crafting high-quality, complex animations on the web.",
-    "link": "https://gsap.com/"
+    id: 14,
+    name: "Supabase",
+    image: "/supabase.svg",
+    description: "An open source Firebase alternative providing a Postgres database, Authentication, and APIs.",
+    link: "https://supabase.com/"
   },
   {
-    "id": 12,
-    "name": "Node.js",
-    "image": "/nodejs.svg",
-    "description": "A runtime that allows building scalable backend services with JavaScript.",
-    "link": "https://nodejs.org/en/"
+    id: 15,
+    name: "Redis",
+    image: "/redis.svg",
+    description: "An in-memory data structure store, used as a database, cache, and message broker.",
+    link: "https://redis.io/"
   },
   {
-    "id": 13,
-    "name": "Express",
-    "image": "/express.svg",
-    "description": "A fast, minimalist framework for Node.js used for building APIs and backend logic.",
-    "link": "https://expressjs.com/"
+    id: 16,
+    name: "Docker",
+    image: "/docker.svg",
+    description: "The core platform for building, shipping, and running applications in containers across any environment.",
+    link: "https://docs.docker.com/"
   },
   {
-    "id": 14,
-    "name": "MongoDB",
-    "image": "/mongodb.svg",
-    "description": "A document-based NoSQL database ideal for flexible, scalable web apps.",
-    "link": "https://www.mongodb.com/"
+    id: 17,
+    name: "AWS",
+    image: "/aws.svg",
+    description: "Comprehensive and widely adopted cloud platform, offering computing power, database storage, and more.",
+    link: "https://aws.amazon.com/"
   },
   {
-    "id": 23,
-    "name": "Prisma",
-    "image": "/prisma.svg",
-    "description": "A modern, open-source ORM that provides a type-safe way to interact with databases in TypeScript applications.",
-    "link": "https://www.prisma.io/docs"
+    id: 18,
+    name: "Linux",
+    image: "/linux.svg",
+    description: "An open-source Unix-like operating system kernel.",
+    link: "https://www.kernel.org/"
   },
   {
-    "id": 15,
-    "name": "Firebase",
-    "image": "/firebase.svg",
-    "description": "A BaaS platform offering authentication, hosting, and NoSQL database services.",
-    "link": "https://firebase.google.com/"
+    id: 19,
+    name: "GitHub Actions",
+    image: "/githubactions.svg",
+    description: "Automate, customize, and execute your software development workflows right in your repository.",
+    link: "https://github.com/features/actions"
   },
   {
-    "id": 16,
-    "name": "Git",
-    "image": "/git.svg",
-    "description": "A version control system to manage code changes and collaborate efficiently.",
-    "link": "https://git-scm.com/"
+    id: 20,
+    name: "Git",
+    image: "/git.svg",
+    description: "A version control system to manage code changes and collaborate efficiently.",
+    link: "https://git-scm.com/"
   },
   {
-    "id": 17,
-    "name": "Python",
-    "image": "/python.svg",
-    "description": "A beginner-friendly, versatile language used in automation, scripting, and backend development.",
-    "link": "https://docs.python.org/3/"
+    id: 21,
+    name: "Python",
+    image: "/python.svg",
+    description: "A beginner-friendly, versatile language used in automation, scripting, and backend development.",
+    link: "https://docs.python.org/3/"
   },
   {
-    "id": 18,
-    "name": "C",
-    "image": "/c.svg",
-    "description": "A foundational systems language that powers operating systems and embedded software.",
-    "link": "https://en.cppreference.com/w/c"
+    id: 22,
+    name: "C",
+    image: "/c.svg",
+    description: "A foundational systems language that powers operating systems and embedded software.",
+    link: "https://en.cppreference.com/w/c"
   },
   {
-    "id": 19,
-    "name": "Java",
-    "image": "/java.svg",
-    "description": "An object-oriented language heavily used in Android apps and enterprise systems.",
-    "link": "https://docs.oracle.com/en/java/"
+    id: 23,
+    name: "C++",
+    image: "/cpp.svg",
+    description: "A foundational systems language that powers performance-critical applications.",
+    link: "https://isocpp.org/"
   },
-  // {
-  //   "id": 22,
-  //   "name": "Rust",
-  //   "image": "/rust.svg",
-  //   "description": "A modern systems programming language focused on performance and memory safety.",
-  //   "link": "https://doc.rust-lang.org/"
-  // },
+  {
+    id: 24,
+    name: "Java",
+    image: "/java.svg",
+    description: "An object-oriented language heavily used in Android apps and enterprise systems.",
+    link: "https://docs.oracle.com/en/java/"
+  },
+  {
+    id: 25,
+    name: "Vue.js",
+    image: "/vue.svg",
+    description: "A JavaScript framework for building reactive user interfaces using component-based architecture.",
+    link: "https://vuejs.org/"
+  },
+  {
+    id: 26,
+    name: "Tailwind CSS",
+    image: "/tail.svg",
+    description: "A utility-first CSS framework for rapidly building custom designs with ease.",
+    link: "https://tailwindcss.com/"
+  },
+  {
+    id: 27,
+    name: "Shadcn UI",
+    image: "/shadcn-ui.svg",
+    description: "A modern component library built with Radix UI and Tailwind CSS, focused on accessibility.",
+    link: "https://ui.shadcn.com/"
+  },
+  {
+    id: 28,
+    name: "Chakra UI",
+    image: "/chakra.svg",
+    description: "A modular, accessible React component library that offers flexibility and style props.",
+    link: "https://chakra-ui.com/"
+  }
 ];
 
 
 export const workExperience = [
   {
     id: 1,
+    title: "Devops Lead - TSEC Codecell",
+    desc: [
+      "Spearheaded the development and deployment of the platform and execution engine for Weekly Challenges, a CP competition with 650+ users.",
+      "Designed an asynchronous judging pipeline using Redis queues and concurrent Go workers, decoupling code execution from the API and enabling submissions to be processed without blocking the application.",
+      "Deployed Dockerized services on AWS EC2/RDS with CI/CD via GitHub Actions and Watchtower"
+    ],
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: "/codecell.svg",
+  },
+  {
+    id: 2,
+    title: "Software Developer Intern - Saras Finance",
+    desc: [
+      "Migrated a 20k+ line production frontend codebase from JavaScript to TypeScript single-handedly, defining reusable types and interfaces to enforce compile-time safety and reduce runtime errors.",
+      "Implemented a centralized Axios service layer used across 40+ API endpoints with request/response interceptors for HTTP-only token injection, global error handling, and retry logic.",
+      "Revamped the frontend of a core product, refactoring 30+ UI components to improve maintainability."
+    ],
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: "/saras.png",
+  },
+  {
+    id: 3,
     title: "Fullstack Web Developer, TSEC Devs Club",
     desc: "Redesigned the official landing page with Next.js, integrating smooth Lottie animations to enhance interactivity and visual appeal.",
     className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
+    thumbnail: "/devs-light.svg",
   },
-  // {
-  //   id: 2,
-  //   title: "Software Developer Intern - Saras Finance",
-  //   desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-  //   className: "md:col-span-2", // change to md:col-span-2
-  //   thumbnail: "/exp2.svg",
-  // },
-  // {
-  //   id: 3,
-  //   title: "Freelance App Dev Project",
-  //   desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-  //   className: "md:col-span-2", // change to md:col-span-2
-  //   thumbnail: "/exp3.svg",
-  // },
   // {
   //   id: 4,
   //   title: "Lead Frontend Developer",

@@ -31,6 +31,10 @@ export function NavbarDemo({ isRoute }) {
               link: "/#projects",
             },
             {
+              name: "Experience",
+              link: "/#experience",
+            },
+            {
               name: "Skills",
               link: "/#skills",
             },
@@ -51,6 +55,10 @@ export function NavbarDemo({ isRoute }) {
             {
               name: "Projects",
               link: "#projects",
+            },
+            {
+              name: "Experience",
+              link: "#experience",
             },
             {
               name: "Skills",
