@@ -1,5 +1,3 @@
-"use server";
-
 import { socialMedia, freelanceProfiles } from "@/data";
 import FeedbackForm from "./FeedbackForm";
 import Views from "./Views";
