@@ -12,6 +12,7 @@ import {
   Tailwind,
   Link,
 } from '@react-email/components';
+import { Markdown } from '@react-email/markdown';
 
 export default function AiResponseEmail({ userQuery, aiResponse }) {
   const previewText = `Response from Darryl's AI Assistant`;
@@ -28,9 +29,23 @@ export default function AiResponseEmail({ userQuery, aiResponse }) {
             </Section>
 
             <Section className="bg-[#fcf8ff] rounded-lg p-[20px] my-[24px] border border-solid border-[#e9d5ff]">
-              <Text className="text-[#333333] text-[15px] leading-[24px] m-0 whitespace-pre-wrap">
+              <Markdown
+                markdownCustomStyles={{
+                  h1: { fontSize: '20px', fontWeight: 'bold', margin: '16px 0 8px', color: '#333' },
+                  h2: { fontSize: '18px', fontWeight: 'bold', margin: '16px 0 8px', color: '#333' },
+                  h3: { fontSize: '16px', fontWeight: 'bold', margin: '16px 0 8px', color: '#333' },
+                  p: { fontSize: '15px', lineHeight: '24px', margin: '0 0 16px', color: '#333' },
+                  ul: { paddingLeft: '20px', margin: '0 0 16px', color: '#333' },
+                  ol: { paddingLeft: '20px', margin: '0 0 16px', color: '#333' },
+                  li: { fontSize: '15px', lineHeight: '24px', marginBottom: '4px', color: '#333' },
+                  strong: { fontWeight: 'bold' },
+                  table: { width: '100%', borderCollapse: 'collapse', margin: '16px 0' },
+                  th: { borderBottom: '2px solid #ddd', padding: '8px', textAlign: 'left', fontWeight: 'bold' },
+                  td: { borderBottom: '1px solid #ddd', padding: '8px', textAlign: 'left' }
+                }}
+              >
                 {aiResponse}
-              </Text>
+              </Markdown>
             </Section>
 
             <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />

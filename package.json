@@ -12,7 +12,7 @@
     "clean": "rm -rf node_modules .next pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {
-    "@google/genai": "^1.5.1",
+    "@ai-sdk/groq": "^4.0.40",
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-dialog": "^1.1.14",
@@ -20,6 +20,7 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-email/components": "^1.0.12",
+    "@react-email/markdown": "^0.0.18",
     "@react-email/render": "^2.0.8",
     "@react-three/drei": "^10.2.0",
     "@react-three/fiber": "9.0.0-alpha.8",
@@ -30,6 +31,7 @@
     "@tsparticles/slim": "^3.8.1",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
+    "ai": "^7.0.97",
     "axios": "^1.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
