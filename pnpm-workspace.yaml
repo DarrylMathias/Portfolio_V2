@@ -1,7 +1,0 @@
-allowBuilds:
-  '@tailwindcss/oxide': true
-  '@tsparticles/engine': true
-  '@vercel/speed-insights': true
-  core-js: true
-  sharp: true
-  unrs-resolver: true
